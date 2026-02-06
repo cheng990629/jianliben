@@ -199,13 +199,41 @@ const ProfilePage = ({ pageNum }: { pageNum: number }) => (
         {/* 专长领域 */}
         <div>
           <h3 className="text-sm font-medium text-gray-700 mb-2 uppercase tracking-wide">专业特长</h3>
-          <div className="flex flex-wrap gap-2">
-            {personalInfo.specialties.map((spec, idx) => (
-              <div key={idx} className="flex items-center gap-2">
-                <div className="w-1 h-1 rounded-full bg-gray-400"></div>
-                <span className="text-xs text-gray-600">{spec}</span>
-              </div>
-            ))}
+          {/* 技术架构专长 */}
+          <div className="mb-3">
+            <p className="text-xs text-gray-500 mb-1.5">💻 系统架构</p>
+            <div className="flex flex-wrap gap-2">
+              {personalInfo.specialties.map((spec, idx) => (
+                <div key={idx} className="flex items-center gap-1.5">
+                  <div className="w-1 h-1 rounded-full bg-gray-400"></div>
+                  <span className="text-xs text-gray-600">{spec}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* Database 专长 */}
+          <div className="mb-3">
+            <p className="text-xs text-gray-500 mb-1.5">🗄️ 数据库架构</p>
+            <div className="flex flex-wrap gap-2">
+              {personalInfo.specialtiesDatabase?.map((spec, idx) => (
+                <div key={idx} className="flex items-center gap-1.5">
+                  <div className="w-1 h-1 rounded-full bg-gray-400"></div>
+                  <span className="text-xs text-gray-600">{spec}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* Architecture 专长 */}
+          <div>
+            <p className="text-xs text-gray-500 mb-1.5">🏗️ 架构设计</p>
+            <div className="flex flex-wrap gap-2">
+              {personalInfo.specialtiesArchitecture?.map((spec, idx) => (
+                <div key={idx} className="flex items-center gap-1.5">
+                  <div className="w-1 h-1 rounded-full bg-gray-400"></div>
+                  <span className="text-xs text-gray-600">{spec}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 

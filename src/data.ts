@@ -34,6 +34,24 @@ export const personalInfo = {
     'Kubernetes k3s自建集群',
     'All-in-One 架构',
   ],
+  // Database 专业特长
+  specialtiesDatabase: [
+    'PostgreSQL · 集群与性能优化',
+    'Redis · 缓存架构设计',
+    'Elasticsearch · 全文检索与日志分析',
+    '达梦 · 国产数据库适配',
+    'TiDB · 分布式数据库',
+    'Oceanbase · 高可用架构',
+  ],
+  // Architecture 专业特长
+  specialtiesArchitecture: [
+    '微服务架构设计与拆分',
+    '私域电商系统架构',
+    'AI 原型系统设计',
+    '高并发系统架构',
+    '分布式事务处理',
+    '云原生架构实践',
+  ],
   // 架构建设经验
   architectureExperience: [
     {
@@ -62,12 +80,12 @@ export const personalInfo = {
   quickProjects: [
     {
       name: '财税达',
-      tech: 'Kubernate/微服务/RPA',
+      tech: 'Kubernate/微服务/RPA/SASS',
       scale: '',
     },
     {
       name: '中源谈话工作平台',
-      tech: 'Java/Vue3',
+      tech: 'Java/Vue3/Ffmpeg',
       scale: '',
     },
     {
