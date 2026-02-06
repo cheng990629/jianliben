@@ -62,50 +62,62 @@ const getYearStatus = (year: number, ranges: { start: string; end: string }[]) =
 // ==================== 页面1：个人介绍 ====================
 const ProfilePage = ({ pageNum }: { pageNum: number }) => (
   <div className="p-8 h-full flex flex-col">
-    {/* 封面图片 */}
-    <img 
-      src="/src/assets/images/cover-background.jpg" 
-      alt="Cover" 
-      className="w-full h-32 object-cover mb-4 rounded-sm"
-    />
-    
-    {/* 头像 */}
-    <div className="relative -mt-16 mb-4">
-      <img 
-        src="/src/assets/images/profile-photo.png" 
-        alt="Profile" 
-        className="w-24 h-24 rounded-sm border-4 border-white object-cover shadow-md"
-      />
-    </div>
-
-    {/* 标题区域 - 重新排版 */}
-    <div className="mb-6">
-      <div className="flex items-baseline justify-between">
-        <div>
-          <h1 className="text-4xl font-light text-gray-800 tracking-widest uppercase">{personalInfo.name}</h1>
-          <p className="text-lg text-gray-500 mt-1 font-light">{personalInfo.title}</p>
-        </div>
-        {/* 标题右侧信息 */}
-        <div className="flex gap-6 text-sm text-gray-500">
-          <div className="text-center">
-            <p className="text-gray-800 font-medium">{personalInfo.experience}</p>
-            <p className="text-xs text-gray-400">工作经验</p>
+    {/* 顶部区域 */}
+    <div className="flex gap-6">
+      {/* 左侧封面 */}
+      <div className="flex-1">
+        <img 
+          src="/src/assets/images/cover-background.jpg" 
+          alt="Cover" 
+          className="w-full h-32 object-cover rounded-sm"
+        />
+        
+        {/* 标题区域 */}
+        <div className="mb-6 mt-4">
+          <div className="flex items-baseline justify-between">
+            <div>
+              <h1 className="text-4xl font-light text-gray-800 tracking-widest uppercase">{personalInfo.name}</h1>
+              <p className="text-lg text-gray-500 mt-1 font-light">{personalInfo.title}</p>
+            </div>
+            {/* 标题右侧信息 */}
+            <div className="flex gap-6 text-sm text-gray-500">
+              <div className="text-center">
+                <p className="text-gray-800 font-medium">{personalInfo.experience}</p>
+                <p className="text-xs text-gray-400">工作经验</p>
+              </div>
+              <div className="text-center">
+                <p className="text-gray-800 font-medium">{personalInfo.salary}</p>
+                <p className="text-xs text-gray-400">期望薪资</p>
+              </div>
+              <div className="text-center">
+                <p className="text-gray-800 font-medium">{personalInfo.status}</p>
+                <p className="text-xs text-gray-400">求职状态</p>
+              </div>
+            </div>
           </div>
-          <div className="text-center">
-            <p className="text-gray-800 font-medium">{personalInfo.salary}</p>
-            <p className="text-xs text-gray-400">期望薪资</p>
-          </div>
-          <div className="text-center">
-            <p className="text-gray-800 font-medium">{personalInfo.status}</p>
-            <p className="text-xs text-gray-400">求职状态</p>
-          </div>
+          <div className="mt-4 h-px bg-gray-300"></div>
         </div>
       </div>
-      <div className="mt-4 h-px bg-gray-300"></div>
+      
+      {/* 右侧头像 + 二维码 */}
+      <div className="flex flex-col gap-4 items-end">
+        {/* 头像 */}
+        <img 
+          src="/src/assets/images/cover-background.jpg" 
+          alt="Profile" 
+          className="w-28 h-28 rounded-sm border-4 border-white object-cover shadow-md"
+        />
+        {/* 二维码 */}
+        <img 
+          src="/src/assets/images/profile-photo.png" 
+          alt="QR Code" 
+          className="w-20 h-20 rounded-sm border border-gray-200 object-contain"
+        />
+      </div>
     </div>
 
     {/* 左侧信息 */}
-    <div className="flex gap-8 flex-1">
+    <div className="flex gap-8 flex-1 mt-2">
       <div className="w-1/3">
         <div className="space-y-3 text-sm">
           <div className="flex items-baseline gap-2">
