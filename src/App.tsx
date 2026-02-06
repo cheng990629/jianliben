@@ -179,7 +179,7 @@ const ProfilePage = ({ pageNum }: { pageNum: number }) => (
             <div className="grid grid-cols-2 gap-1.5">
               {personalInfo.onboardingDocuments.map((doc, idx) => (
                 <div key={idx} className="flex items-center gap-1.5">
-                  <span className="text-xs text-gray-400">○</span>
+                  <span className="text-xs text-green-600">✓</span>
                   <span className="text-xs text-gray-600">{doc.name}</span>
                 </div>
               ))}
