@@ -26,19 +26,17 @@ export const personalInfo = {
   specialties: [
     '后端架构：Java, Node.js, Python, PHP',
     '前端架构：Vue.js, TypeScript, React.js',
-    '云原生 & DevOps：Kubernetes, Nginx, Lua',
+    '云原生 & DevOps：Kubernetes, Nginx, Lua，Harbor，Cept,Minio，Serverless',
     '数据库：PostgreSQL，Redis, Elasticsearch, 达梦,TiDB, Oceanbase',
-    'AI & 物联网：Strapi CMS AI 解决方案, 海康监控/审计设备',
+    'AGI：Strapi CMS AI 解决方案,',
+    '物联网: 海康监控/审计设备，审讯设备',
     '跨境All in one建设',
     '超融合集群建设',
     'Kubernetes k3s自建集群',
     'All-in-One 架构',
   ],
   // Database 专业特长
-  specialtiesDatabase: [
-    'PostgreSQL 集群与性能优化',
-    'Redis 缓存架构设计',
-    'Elasticsearch 全文检索与日志分析',
+  specialtiesDatabase: [,
     '达梦 国产数据库适配',
     'TiDB 分布式数据库',
     'Oceanbase 高可用架构',

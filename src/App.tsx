@@ -62,6 +62,22 @@ const getYearStatus = (year: number, ranges: { start: string; end: string }[]) =
 // ==================== 页面1：个人介绍 ====================
 const ProfilePage = ({ pageNum }: { pageNum: number }) => (
   <div className="p-8 h-full flex flex-col">
+    {/* 封面图片 */}
+    <img 
+      src="/src/assets/images/cover-background.jpg" 
+      alt="Cover" 
+      className="w-full h-32 object-cover mb-4 rounded-sm"
+    />
+    
+    {/* 头像 */}
+    <div className="relative -mt-16 mb-4">
+      <img 
+        src="/src/assets/images/profile-photo.png" 
+        alt="Profile" 
+        className="w-24 h-24 rounded-sm border-4 border-white object-cover shadow-md"
+      />
+    </div>
+
     {/* 标题区域 - 重新排版 */}
     <div className="mb-6">
       <div className="flex items-baseline justify-between">
@@ -261,7 +277,7 @@ const ProfilePage = ({ pageNum }: { pageNum: number }) => (
 
         {/* 工作经历 */}
         <div className="flex-1">
-          <h3 className="text-sm font-medium text-gray-700 mb-3 uppercase tracking-wide">工作经历</h3>
+          <h3 className="text-sm font-medium text-gray-700 mb-3 uppercase tracking-wide">代表工作经历</h3>
           <div className="space-y-4">
             {workExperience.map((work, idx) => (
               <div key={idx} className="relative pl-5 border-l border-gray-200">
