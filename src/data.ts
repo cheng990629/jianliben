@@ -7,7 +7,7 @@ export const personalInfo = {
   salary: '12k ~ 17k',
   location: '沈阳-沈河区',
   age: '',
-  education: '沈阳工业大学 · 计算机信息管理 (2023.06~2026.07)',
+  education: '沈阳工业大学 · 计算机科学与技术 (2023.06~2026.07)',
   email: 'cheng990629@163.com',
   phone: '189-4195-9525',
   // 入职资料
@@ -36,12 +36,12 @@ export const personalInfo = {
   ],
   // Database 专业特长
   specialtiesDatabase: [
-    'PostgreSQL · 集群与性能优化',
-    'Redis · 缓存架构设计',
-    'Elasticsearch · 全文检索与日志分析',
-    '达梦 · 国产数据库适配',
-    'TiDB · 分布式数据库',
-    'Oceanbase · 高可用架构',
+    'PostgreSQL 集群与性能优化',
+    'Redis 缓存架构设计',
+    'Elasticsearch 全文检索与日志分析',
+    '达梦 国产数据库适配',
+    'TiDB 分布式数据库',
+    'Oceanbase 高可用架构',
   ],
   // Architecture 专业特长
   specialtiesArchitecture: [
@@ -196,14 +196,14 @@ export const education = [
   {
     school: '沈阳工业大学',
     degree: '本科',
-    major: '计算机信息管理',
+    major: '计算机科学与技术',
     note: '2023.06~2026.07',
     year: '2026',
   },
   {
     school: '渤海大学',
     degree: '专科',
-    major: '计算机信息管理',
+    major: '计算机应用技术',
     note: '2021.06~2023.06',
     year: '2023',
   },
