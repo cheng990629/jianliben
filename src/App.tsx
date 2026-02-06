@@ -171,6 +171,21 @@ const ProfilePage = ({ pageNum }: { pageNum: number }) => (
             </div>
           ))}
         </div>
+
+        {/* 入职资料 */}
+        {personalInfo.onboardingDocuments && (
+          <div className="mt-6">
+            <h3 className="text-sm font-medium text-gray-700 mb-2">入职资料</h3>
+            <div className="grid grid-cols-2 gap-1.5">
+              {personalInfo.onboardingDocuments.map((doc, idx) => (
+                <div key={idx} className="flex items-center gap-1.5">
+                  <span className="text-xs text-gray-400">○</span>
+                  <span className="text-xs text-gray-600">{doc.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
 
       {/* 右侧内容 */}

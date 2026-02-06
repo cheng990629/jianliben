@@ -10,6 +10,18 @@ export const personalInfo = {
   education: '沈阳工业大学 · 计算机信息管理 (2023.06~2026.07)',
   email: 'cheng990629@163.com',
   phone: '189-4195-9525',
+  // 入职资料
+  onboardingDocuments: [
+    { name: '离职证明', status: '✓ 已准备' },
+    { name: '薪资证明', status: '✓ 已准备' },
+    { name: '户口本', status: '✓ 已准备' },
+    { name: '毕业证', status: '✓ 已准备' },
+    { name: '寸照', status: '✓ 已准备' },
+    { name: '征信报告', status: '✓ 已准备' },
+    { name: '无犯罪证明', status: '✓ 已准备' },
+    { name: '体检报告', status: '✓ 已准备' },
+    { name: '社保卡', status: '✓ 已准备' },
+  ],
   summary: `技术驱动型架构师，具备架构思维和强学习能力。致力于推动传统系统与 AI 的深度融合与改造。精通 All-in-One 架构、K8s、云原生、分布式系统、微服务、集群化部署。擅长创新AI原型与交互设计，整合设计构建工程，技术攻坚，大数据交互，租户分库分表设计，具备跨境网络研发与设计能力。`,
   specialties: [
     '后端架构：Java, Node.js, Python, PHP',
