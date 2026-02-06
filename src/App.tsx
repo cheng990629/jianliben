@@ -768,8 +768,34 @@ export default function App() {
         {renderPage()}
       </div>
 
+      {/* 技术引擎水印 */}
+      <div className="mt-3 flex items-center justify-center gap-3 text-xs text-gray-400 print:hidden">
+        <span>Built with</span>
+        <span className="flex items-center gap-1">
+          <span className="text-gray-500">⚡</span>
+          <span className="text-gray-600">Cursor</span>
+        </span>
+        <span className="text-gray-300">|</span>
+        <span className="flex items-center gap-1">
+          <span className="text-blue-500">⚛</span>
+          <span className="text-gray-600">React</span>
+        </span>
+        <span className="text-gray-300">|</span>
+        <span className="flex items-center gap-1">
+          <span className="text-cyan-500">💨</span>
+          <span className="text-gray-600">Tailwind CSS</span>
+        </span>
+        <span className="text-gray-300">|</span>
+        <span className="flex items-center gap-1">
+          <span className="text-orange-500">▲</span>
+          <span className="text-gray-600">Vite</span>
+        </span>
+        <span className="text-gray-300">|</span>
+        <span className="text-gray-500">by 高成</span>
+      </div>
+
       {/* 打印说明 */}
-      <div className="mt-4 text-xs text-gray-400 print:hidden">
+      <div className="mt-2 text-xs text-gray-400 print:hidden">
         Press Ctrl+P to print · Each page prints separately
       </div>
     </div>
