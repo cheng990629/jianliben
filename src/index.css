@@ -15,8 +15,19 @@ body {
   color: #f8fafc;
 }
 
-/* 黑白打印优化 */
+/* A4 页面尺寸定义 */
+@page {
+  size: A4;
+  margin: 0;
+}
+
+/* A4 打印尺寸 */
 @media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
   body {
     background: white !important;
     color: black !important;
@@ -47,4 +58,32 @@ body {
   .text-gray-400, .text-gray-500 {
     color: #4b5563 !important;
   }
+
+  /* 打印时强制每页新开一页 */
+  .page-break-before {
+    page-break-before: always;
+  }
+
+  .page-break-after {
+    page-break-after: always;
+  }
+}
+
+/* 调试模式：显示内容溢出警告 */
+.debug-overflow {
+  outline: 2px dashed #ef4444 !important;
+  outline-offset: -2px;
+}
+
+.debug-overflow::before {
+  content: '⚠️ 内容超出 A4 高度';
+  position: absolute;
+  top: -20px;
+  right: 0;
+  background: #ef4444;
+  color: white;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 2px;
+  z-index: 100;
 }

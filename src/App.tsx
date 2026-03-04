@@ -62,82 +62,83 @@ const getYearStatus = (year: number, ranges: { start: string; end: string }[]) =
 // ==================== 页面1：个人介绍 ====================
 const ProfilePage = ({ pageNum }: { pageNum: number }) => (
   <div className="p-8 h-full flex flex-col">
-    {/* 顶部区域 */}
-    <div className="flex gap-6">
-      {/* 左侧封面 */}
-      <div className="flex-1">
-        <img 
-          src="/src/assets/images/cover-background.jpg" 
-          alt="Cover" 
-          className="w-full h-32 object-cover rounded-sm"
-        />
-        
-        {/* 标题区域 */}
-        <div className="mb-6 mt-4">
-          <div className="flex items-baseline justify-between">
-            <div>
-              <h1 className="text-4xl font-light text-gray-800 tracking-widest uppercase">{personalInfo.name}</h1>
-              <p className="text-lg text-gray-500 mt-1 font-light">{personalInfo.title}</p>
+    {/* 封面图片 */}
+
+    
+    {/* 标题区域 - 左右结构 */}
+    <div className="mb-3 min-h-[100px] flex items-stretch">
+      <div className="flex justify-between w-full items-stretch">
+        {/* 左侧：姓名 + 求职意向 + 基本信息 */}
+        <div className="h-16">
+          <div className="flex items-baseline gap-6">
+            <h1 className="text-4xl font-light text-gray-800 tracking-widest uppercase">{personalInfo.name}</h1>
+            <p className="text-lg text-gray-500 font-light">{personalInfo.title}</p>
+          </div>
+          
+          {/* 基本信息 2x2 */}
+          <div className="mt-4 grid grid-cols-2 gap-x-12 gap-y-2 text-xs text-gray-500 w-[460px]">
+            <div className="flex items-center gap-2">
+              <span className="text-gray-400">生日</span>
+              <span className="text-gray-700">{personalInfo.birthday}</span>
             </div>
-            {/* 标题右侧信息 */}
-            <div className="flex gap-6 text-sm text-gray-500">
-              <div className="text-center">
-                <p className="text-gray-800 font-medium">{personalInfo.experience}</p>
-                <p className="text-xs text-gray-400">工作经验</p>
-              </div>
-              <div className="text-center">
-                <p className="text-gray-800 font-medium">{personalInfo.salary}</p>
-                <p className="text-xs text-gray-400">期望薪资</p>
-              </div>
-              <div className="text-center">
-                <p className="text-gray-800 font-medium">{personalInfo.status}</p>
-                <p className="text-xs text-gray-400">求职状态</p>
-              </div>
+            <div className="flex items-center gap-2">
+              <span className="text-gray-400">电话</span>
+              <span className="text-gray-700">{personalInfo.phone}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-gray-400">现居</span>
+              <span className="text-gray-700">{personalInfo.location}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-gray-400">邮箱</span>
+              <span className="text-gray-700">{personalInfo.email}</span>
             </div>
           </div>
-          <div className="mt-4 h-px bg-gray-300"></div>
+        </div>
+        
+        {/* 左侧：二维码 */}
+        <div className="flex gap-2 items-end">
+          {personalInfo.qrCode && (
+            <img 
+              src={personalInfo.qrCode} 
+              alt="QR Code" 
+              className="h-20 w-auto rounded-sm border-2 border-gray-200 object-cover"
+            />
+          )}
+          <img 
+            src="/src/assets/images/profile.png" 
+            alt="Profile" 
+            className="h-20 w-auto rounded-sm border-2 border-gray-200 object-cover"
+          />
         </div>
       </div>
       
-      {/* 右侧头像 + 二维码 */}
-      <div className="flex flex-col gap-4 items-end">
-        {/* 头像 */}
-        <img 
-          src="/src/assets/images/cover-background.jpg" 
-          alt="Profile" 
-          className="w-28 h-28 rounded-sm border-4 border-white object-cover shadow-md"
-        />
-        {/* 二维码 */}
-        <img 
-          src="/src/assets/images/profile-photo.png" 
-          alt="QR Code" 
-          className="w-20 h-20 rounded-sm border border-gray-200 object-contain"
-        />
-      </div>
+      <div className="mt-3 h-px bg-gray-300"></div>
     </div>
 
     {/* 左侧信息 */}
-    <div className="flex gap-8 flex-1 mt-2">
+    <div className="flex gap-6 flex-1">
       <div className="w-1/3">
-        <div className="space-y-3 text-sm">
-          <div className="flex items-baseline gap-2">
-            <span className="text-gray-400 w-16 shrink-0">Email</span>
-            <p className="text-gray-700 text-xs">{personalInfo.email}</p>
+        {/* 工作信息 */}
+        <div className="mt-1 space-y-1 text-xs text-gray-500">
+          <div className="flex items-center gap-2">
+            <span>工作经验</span>
+            <span className="text-gray-800 font-medium">{personalInfo.experience}</span>
           </div>
-          <div className="flex items-baseline gap-2">
-            <span className="text-gray-400 w-16 shrink-0">Phone</span>
-            <p className="text-gray-700 text-xs">{personalInfo.phone}</p>
+          <div className="flex items-center gap-2">
+            <span>期望薪资</span>
+            <span className="text-gray-800 font-medium">{personalInfo.salary}</span>
           </div>
-          <div className="flex items-baseline gap-2">
-            <span className="text-gray-400 w-16 shrink-0">Location</span>
-            <p className="text-gray-700 text-xs">{personalInfo.location}</p>
+          <div className="flex items-center gap-2">
+            <span>求职状态</span>
+            <span className="text-gray-800 font-medium">{personalInfo.status}</span>
           </div>
         </div>
 
         {/* 代表项目 */}
-        <div className="mt-6">
-          <h3 className="text-sm font-medium text-gray-700 mb-3">代表项目</h3>
-          <div className="space-y-1.5">
+        <div className="mt-2">
+          <h3 className="text-sm font-medium text-gray-700 mb-2">代表项目</h3>
+          <div className="space-y-1">
             {personalInfo.quickProjects?.map((project, idx) => (
               <div key={idx} className="flex items-center gap-2">
                 <span className="text-xs font-medium text-gray-700">{project.name}</span>
@@ -155,10 +156,10 @@ const ProfilePage = ({ pageNum }: { pageNum: number }) => (
         </div>
 
         {/* 技能分类 */}
-        <div className="mt-6">
-          <h3 className="text-sm font-medium text-gray-700 mb-3">技术栈</h3>
+        <div className="mt-2">
+          <h3 className="text-sm font-medium text-gray-700 mb-2">技术栈</h3>
           {skillCategories.map(cat => (
-            <div key={cat.name} className="mb-3">
+            <div key={cat.name} className="mb-2">
               <p className="text-xs text-gray-500 mb-1">{cat.name}</p>
               <div className="flex flex-wrap gap-1">
                 {cat.skills.map(skill => (
@@ -175,7 +176,7 @@ const ProfilePage = ({ pageNum }: { pageNum: number }) => (
         </div>
 
         {/* 架构建设经验 */}
-        <div className="mt-6">
+        <div className="mt-3">
           <h3 className="text-sm font-medium text-gray-700 mb-2">架构建设</h3>
           <div className="space-y-1">
             {personalInfo.architectureExperience?.map((item, idx) => (
@@ -189,7 +190,7 @@ const ProfilePage = ({ pageNum }: { pageNum: number }) => (
 
        
         {/* 教育背景 */}
-        <div className="mt-6">
+        <div className="mt-2">
           <h3 className="text-sm font-medium text-gray-700 mb-2">教育背景</h3>
           {education.map(edu => (
             <div key={edu.school} className="mb-2">
@@ -202,7 +203,7 @@ const ProfilePage = ({ pageNum }: { pageNum: number }) => (
 
         {/* 入职资料 */}
         {personalInfo.onboardingDocuments && (
-          <div className="mt-6">
+          <div className="mt-3">
             <h3 className="text-sm font-medium text-gray-700 mb-2">入职资料</h3>
             <div className="grid grid-cols-2 gap-1.5">
               {personalInfo.onboardingDocuments.map((doc, idx) => (
@@ -217,7 +218,7 @@ const ProfilePage = ({ pageNum }: { pageNum: number }) => (
       </div>
 
       {/* 右侧内容 */}
-      <div className="w-2/3 space-y-6">
+      <div className="w-2/3 space-y-4">
         {/* 个人概述 */}
         <div>
           <h3 className="text-sm font-medium text-gray-700 mb-2 uppercase tracking-wide">关于我</h3>
@@ -225,10 +226,10 @@ const ProfilePage = ({ pageNum }: { pageNum: number }) => (
         </div>
 
         {/* 专长领域 */}
-        <div>
+        <div className="mt-1">
           <h3 className="text-sm font-medium text-gray-700 mb-2 uppercase tracking-wide">专业特长</h3>
           {/* 技术架构专长 */}
-          <div className="mb-3">
+          <div className="mb-1">
             <div className="flex flex-wrap gap-2">
               {personalInfo.specialties.map((spec, idx) => (
                 <div key={idx} className="flex items-center gap-1.5">
@@ -239,7 +240,7 @@ const ProfilePage = ({ pageNum }: { pageNum: number }) => (
             </div>
           </div>
           {/* Database 专长 */}
-          <div className="mb-3">
+          <div className="mb-1">
             <div className="flex flex-wrap gap-2">
               {personalInfo.specialtiesDatabase?.map((spec, idx) => (
                 <div key={idx} className="flex items-center gap-1.5">
@@ -267,8 +268,8 @@ const ProfilePage = ({ pageNum }: { pageNum: number }) => (
           <h3 className="text-sm font-medium text-gray-700 mb-3 uppercase tracking-wide">核心技能</h3>
           <div className="grid grid-cols-3 gap-3">
             {[
-              { label: '后端开发', value: 92, color: 'bg-gray-800' },
-              { label: '前端开发', value: 97, color: 'bg-gray-700' },
+              { label: '后端研发', value: 92, color: 'bg-gray-800' },
+              { label: '前端研发', value: 97, color: 'bg-gray-700' },
               { label: '云原生架构', value: 93, color: 'bg-gray-600' },
               { label: '重新定义AGI原型', value: 93, color: 'bg-gray-500' },
               { label: '系统架构', value: 93, color: 'bg-gray-600' },
@@ -294,7 +295,7 @@ const ProfilePage = ({ pageNum }: { pageNum: number }) => (
             {workExperience.map((work, idx) => (
               <div key={idx} className="relative pl-5 border-l border-gray-200">
                 <div className="absolute left-[-3px] top-0 w-1.5 h-1.5 rounded-full bg-gray-400"></div>
-                <div className="flex justify-between items-start mb-1">
+                <div className="flex justify-between items-start mb-2">
                   <div>
                     <p className="text-sm font-medium text-gray-800">{work.position}</p>
                     <p className="text-xs text-gray-500">{work.company}</p>
@@ -322,8 +323,8 @@ const ProfilePage = ({ pageNum }: { pageNum: number }) => (
 
     {/* 底部 */}
     <div className="mt-auto pt-3 border-t border-gray-100 flex justify-between text-xs text-gray-400">
-      <span>Resume</span>
-      <span>Page {pageNum}</span>
+      <span>简历</span>
+      <span>第 {pageNum} 页</span>
     </div>
   </div>
 );
@@ -336,7 +337,7 @@ const TechStackPage = ({ pageNum }: { pageNum: number }) => {
   const TemplateA = () => (
     <>
       {/* 顶部年份轴 */}
-      <div className="mb-4">
+      <div className="mb-3">
         <div className="flex">
           {Array.from({ length: TOTAL_YEARS }, (_, i) => START_YEAR + i).map(year => (
             <div 
@@ -500,10 +501,10 @@ const TechStackPage = ({ pageNum }: { pageNum: number }) => {
   return (
     <div className="p-10 h-full relative">
       {/* 标题区域 */}
-      <div className="mb-6">
+      <div className="mb-3">
         <h1 className="text-3xl font-light text-gray-800 tracking-widest uppercase">Technology Timeline</h1>
-        <div className="mt-3 h-px bg-gray-300"></div>
-        <div className="mt-4 flex justify-between text-sm text-gray-500">
+        <div className="mt-2 h-px bg-gray-300"></div>
+        <div className="mt-3 flex justify-between text-xs text-gray-500">
           <span>2016 — 2027</span>
           <span>{techData.length} Technologies</span>
         </div>
@@ -537,7 +538,7 @@ const TechStackPage = ({ pageNum }: { pageNum: number }) => {
       {template === 'A' ? <TemplateA /> : <TemplateB />}
 
       {/* 阶段图例 */}
-      <div className="mt-8 pt-4 border-t border-gray-200">
+      <div className="mt-4 pt-3 border-t border-gray-200">
         <div className="flex items-center justify-center gap-6 flex-wrap">
           {phases.map((phase, idx) => (
             <div key={phase.year} className="flex items-center gap-2">
@@ -555,7 +556,7 @@ const TechStackPage = ({ pageNum }: { pageNum: number }) => {
       </div>
 
       {/* 底部 */}
-      <div className="mt-6 pt-4 border-t border-gray-100 flex justify-between text-xs text-gray-400">
+      <div className="mt-4 pt-3 border-t border-gray-100 flex justify-between text-[10px] text-gray-400">
         <span>Technology Stack</span>
         <span>Page {pageNum}</span>
       </div>
@@ -565,41 +566,41 @@ const TechStackPage = ({ pageNum }: { pageNum: number }) => {
 
 // ==================== 页面3：技术架构 ====================
 const ArchitecturePage = ({ pageNum }: { pageNum: number }) => (
-  <div className="p-10 h-full">
+  <div className="p-8 h-full">
     {/* 标题区域 */}
-    <div className="mb-6">
+    <div className="mb-3">
       <h1 className="text-3xl font-light text-gray-800 tracking-widest uppercase">System Architecture</h1>
-      <div className="mt-3 h-px bg-gray-300"></div>
-      <div className="mt-4 flex justify-between text-sm text-gray-500">
+      <div className="mt-2 h-px bg-gray-300"></div>
+      <div className="mt-2 flex justify-between text-xs text-gray-500">
         <span>Microservices Architecture</span>
         <span>Cloud Native Design</span>
       </div>
     </div>
 
     {/* 架构图 */}
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-2">
       {architectureData.layers.map((layer, layerIdx) => (
         <div key={layer.name} className="flex items-center">
           {/* 层名称 */}
           <div 
-            className="w-24 text-xs font-medium text-right pr-3 shrink-0"
+            className="w-20 text-[10px] font-medium text-right pr-2 shrink-0"
             style={{ color: layer.color }}
           >
             {layer.name}
           </div>
           
           {/* 层内容 */}
-          <div className="flex-1 flex gap-2">
+          <div className="flex-1 flex gap-1.5">
             {layer.components.map((comp, compIdx) => (
               <div 
                 key={comp.name}
-                className="flex-1 px-3 py-2 bg-gray-50 border border-gray-200 rounded-sm text-center relative"
+                className="flex-1 px-2 py-1.5 bg-gray-50 border border-gray-200 rounded-sm text-center relative"
               >
-                <span className="text-sm mr-1">{comp.icon}</span>
-                <span className="text-xs text-gray-700">{comp.name}</span>
+                <span className="text-xs mr-0.5">{comp.icon}</span>
+                <span className="text-[10px] text-gray-700">{comp.name}</span>
                 {/* 连接线 */}
                 {compIdx < layer.components.length - 1 && (
-                  <div className="absolute right-[-8px] top-1/2 -translate-y-1/2 w-4 h-px bg-gray-300"></div>
+                  <div className="absolute right-[-6px] top-1/2 -translate-y-1/2 w-3 h-px bg-gray-300"></div>
                 )}
               </div>
             ))}
@@ -609,14 +610,14 @@ const ArchitecturePage = ({ pageNum }: { pageNum: number }) => (
     </div>
 
     {/* 基础设施 */}
-    <div className="mt-6 pt-4 border-t border-gray-200">
-      <div className="flex items-center justify-center gap-8">
+    <div className="mt-4 pt-3 border-t border-gray-200">
+      <div className="flex items-center justify-center gap-6">
         {architectureData.infrastructure.map((item, idx) => (
           <React.Fragment key={item.name}>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-gray-400"></div>
-              <span className="text-xs text-gray-600">{item.name}</span>
-              <span className="text-[10px] text-gray-400">({item.type})</span>
+            <div className="flex items-center gap-1.5">
+              <div className="w-1.5 h-1.5 rounded-full bg-gray-400"></div>
+              <span className="text-[10px] text-gray-600">{item.name}</span>
+              <span className="text-[9px] text-gray-400">({item.type})</span>
             </div>
             {idx < architectureData.infrastructure.length - 1 && (
               <span className="text-gray-300">|</span>
@@ -627,29 +628,29 @@ const ArchitecturePage = ({ pageNum }: { pageNum: number }) => (
     </div>
 
     {/* 架构说明 */}
-    <div className="mt-6 p-4 bg-gray-50 border border-gray-100 rounded-sm">
-      <div className="grid grid-cols-4 gap-4 text-center">
+    <div className="mt-4 p-3 bg-gray-50 border border-gray-100 rounded-sm">
+      <div className="grid grid-cols-4 gap-2 text-center">
         <div>
-          <p className="text-lg font-light text-gray-800">99.99%</p>
-          <p className="text-[10px] text-gray-400">Availability</p>
+          <p className="text-base font-light text-gray-800">99.99%</p>
+          <p className="text-[9px] text-gray-400">Availability</p>
         </div>
         <div>
-          <p className="text-lg font-light text-gray-800">30+</p>
-          <p className="text-[10px] text-gray-400">Microservices</p>
+          <p className="text-base font-light text-gray-800">30+</p>
+          <p className="text-[9px] text-gray-400">Microservices</p>
         </div>
         <div>
-          <p className="text-lg font-light text-gray-800">10M+</p>
-          <p className="text-[10px] text-gray-400">Daily Requests</p>
+          <p className="text-base font-light text-gray-800">10M+</p>
+          <p className="text-[9px] text-gray-400">Daily Requests</p>
         </div>
         <div>
-          <p className="text-lg font-light text-gray-800">&lt;100ms</p>
-          <p className="text-[10px] text-gray-400">Response Time</p>
+          <p className="text-base font-light text-gray-800">&lt;100ms</p>
+          <p className="text-[9px] text-gray-400">Response Time</p>
         </div>
       </div>
     </div>
 
     {/* 底部 */}
-    <div className="mt-auto pt-4 border-t border-gray-100 flex justify-between text-xs text-gray-400">
+    <div className="mt-auto pt-2 border-t border-gray-100 flex justify-between text-[10px] text-gray-400">
       <span>System Architecture</span>
       <span>Page {pageNum}</span>
     </div>
@@ -658,38 +659,38 @@ const ArchitecturePage = ({ pageNum }: { pageNum: number }) => (
 
 // ==================== 页面4：项目经历 ====================
 const ProjectsPage = ({ pageNum }: { pageNum: number }) => (
-  <div className="p-10 h-full">
+  <div className="p-8 h-full">
     {/* 标题区域 */}
-    <div className="mb-6">
+    <div className="mb-3">
       <h1 className="text-3xl font-light text-gray-800 tracking-widest uppercase">Project Experience</h1>
-      <div className="mt-3 h-px bg-gray-300"></div>
-      <div className="mt-4 flex justify-between text-sm text-gray-500">
+      <div className="mt-2 h-px bg-gray-300"></div>
+      <div className="mt-2 flex justify-between text-xs text-gray-500">
         <span>{projects.length} Major Projects</span>
         <span>2016 — 2027</span>
       </div>
     </div>
 
     {/* 项目列表 */}
-    <div className="space-y-4">
+    <div className="space-y-3">
       {projects.map((project, idx) => (
-        <div key={idx} className="p-4 bg-gray-50 border border-gray-100 rounded-sm">
-          <div className="flex justify-between items-start mb-3">
+        <div key={idx} className="p-3 bg-gray-50 border border-gray-100 rounded-sm">
+          <div className="flex justify-between items-start mb-2">
             <div>
-              <h3 className="text-sm font-medium text-gray-800">{project.name}</h3>
-              <p className="text-xs text-gray-500 mt-1">{project.description}</p>
+              <h3 className="text-xs font-medium text-gray-800">{project.name}</h3>
+              <p className="text-[10px] text-gray-500 mt-0.5">{project.description}</p>
             </div>
             <div className="text-right">
-              <span className="text-xs text-gray-400 block">{project.period}</span>
-              <span className="text-[10px] text-gray-500">{project.role}</span>
+              <span className="text-[10px] text-gray-400 block">{project.period}</span>
+              <span className="text-[9px] text-gray-500">{project.role}</span>
             </div>
           </div>
           
           {/* 技术栈 */}
-          <div className="flex flex-wrap gap-1 mb-3">
+          <div className="flex flex-wrap gap-0.5 mb-2">
             {project.techStack.map(tech => (
               <span 
                 key={tech} 
-                className="px-2 py-0.5 bg-white border border-gray-200 text-gray-600 text-[10px] rounded"
+                className="px-1.5 py-0.5 bg-white border border-gray-200 text-gray-600 text-[10px] rounded"
               >
                 {tech}
               </span>
@@ -697,11 +698,11 @@ const ProjectsPage = ({ pageNum }: { pageNum: number }) => (
           </div>
           
           {/* 亮点 */}
-          <div className="flex flex-wrap gap-4 text-center">
+          <div className="flex flex-wrap gap-2 text-center">
             {project.highlights.map((highlight, hIdx) => (
               <div key={hIdx} className="flex items-center gap-1">
                 <div className="w-1 h-1 rounded-full bg-gray-400"></div>
-                <span className="text-xs text-gray-600">{highlight}</span>
+                <span className="text-[10px] text-gray-600">{highlight}</span>
               </div>
             ))}
           </div>
@@ -710,7 +711,7 @@ const ProjectsPage = ({ pageNum }: { pageNum: number }) => (
     </div>
 
     {/* 底部 */}
-    <div className="mt-auto pt-4 border-t border-gray-100 flex justify-between text-xs text-gray-400">
+    <div className="mt-auto pt-2 border-t border-gray-100 flex justify-between text-[10px] text-gray-400">
       <span>Project Experience</span>
       <span>Page {pageNum}</span>
     </div>
@@ -721,10 +722,10 @@ const ProjectsPage = ({ pageNum }: { pageNum: number }) => (
 const PrototypePage = ({ pageNum }: { pageNum: number }) => (
   <div className="p-10 h-full">
     {/* 标题区域 */}
-    <div className="mb-6">
+    <div className="mb-3">
       <h1 className="text-3xl font-light text-gray-800 tracking-widest uppercase">Design Prototypes</h1>
-      <div className="mt-3 h-px bg-gray-300"></div>
-      <div className="mt-4 flex justify-between text-sm text-gray-500">
+      <div className="mt-2 h-px bg-gray-300"></div>
+      <div className="mt-2 flex justify-between text-xs text-gray-500">
         <span>UI/UX Design Works</span>
         <span>Wireframes & Mockups</span>
       </div>
@@ -816,8 +817,8 @@ export default function App() {
         ))}
       </nav>
 
-      {/* A4 页面 */}
-      <div className="w-[210mm] min-h-[297mm] bg-white shadow-md print:shadow-none print:w-full">
+      {/* A4 页面 - 固定高度 297mm (A4标准高度)，允许滚动查看溢出内容 */}
+      <div className="w-[210mm] h-[297mm] bg-white shadow-md print:shadow-none print:w-full overflow-y-auto print:overflow-visible">
         {renderPage()}
       </div>
 

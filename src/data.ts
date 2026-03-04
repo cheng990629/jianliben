@@ -1,11 +1,12 @@
 // ==================== 个人信息 ====================
 export const personalInfo = {
   name: '高成',
-  title: '全栈 (AI) 架构师',
+  title: '求职意向：后端/前端/全栈 (AI方向)',
   status: '离职 - 随时到岗',
   experience: '8年',
   salary: '12k ~ 17k',
   location: '沈阳-沈河区',
+  birthday: '1999.06.29',
   age: '',
   education: '沈阳工业大学 · 计算机科学与技术 (2023.06~2026.07)',
   email: 'cheng990629@163.com',
@@ -22,31 +23,30 @@ export const personalInfo = {
     { name: '体检报告', status: '✓ 已准备' },
     { name: '社保卡', status: '✓ 已准备' },
   ],
-  summary: `技术驱动型架构师，具备架构思维和强学习能力。致力于推动传统系统与 AI 的深度融合与改造。精通 All-in-One 架构、K8s、云原生、分布式系统、微服务、集群化部署。擅长创新AI原型与交互设计，整合设计构建工程，技术攻坚，大数据交互，租户分库分表设计，具备跨境网络研发与设计能力。`,
+  // 二维码图片路径
+  qrCode: '/src/assets/images/profile-photo.png',
+  summary: `技术驱动型架构师，具备架构思维和强学习能力。致力于推动传统系统与 AI 的深度融合与改造。精通 All-in-One 架构、K8s、云原生、分布式系统、微服务、集群化部署。擅长创新AI原型与交互设计，整合设计构建工程，技术攻坚，大数据交互，具备跨境网络研发与设计能力。`,
   specialties: [
     '后端架构：Java, Node.js, Python, PHP',
     '前端架构：Vue.js, TypeScript, React.js',
     '云原生 & DevOps：Kubernetes, Nginx, Lua，Harbor，Cept,Minio，Serverless',
     '数据库：PostgreSQL，Redis, Elasticsearch, 达梦,TiDB, Oceanbase',
-    'AGI：Strapi CMS AI 解决方案,',
-    '物联网: 海康监控/审计设备，审讯设备',
-    '跨境All in one建设',
-    '超融合集群建设',
-    'Kubernetes k3s自建集群',
-    'All-in-One 架构',
+    'AGI：基于Strapi AntdesignX ,重新定义产品入口，表单式对话，通用产品解决方案',
+    '物联网: 海康监控/审计设备，审讯设备，Ffmpeg，海康原生SDK',
+
+    'All-in-One 架构： Proxmox VE，Kairos kubernates,Openwrt,OpenClash,Tailscale',
   ],
   // Database 专业特长
   specialtiesDatabase: [,
-    '达梦 国产数据库适配',
-    'TiDB 分布式数据库',
-    'Oceanbase 高可用架构',
+    // '达梦 国产数据库适配',
+    // 'TiDB 分布式数据库',
+    // 'Oceanbase 高可用架构',
   ],
   // Architecture 专业特长
   specialtiesArchitecture: [
     '微服务架构设计与拆分',
     '私域电商系统架构',
     'AI 原型系统设计',
-    '高并发系统架构',
     '云原生架构实践',
   ],
   // 架构建设经验
@@ -81,6 +81,11 @@ export const personalInfo = {
       scale: '',
     },
     {
+      name: '私域电商多商户',
+      tech: 'Java/uniapp/Vue3',
+      scale: '',
+    },
+    {
       name: '中源谈话工作平台',
       tech: 'Java/Vue3/Ffmpeg',
       scale: '',
@@ -95,11 +100,7 @@ export const personalInfo = {
       tech: 'Node.js/Next.js',
       scale: '',
     },
-    {
-      name: '私域电商多商户',
-      tech: 'Java/uniapp/Vue3',
-      scale: '',
-    },
+ 
   ],
 };
 
@@ -169,20 +170,22 @@ export const workExperience = [
     company: '辽宁易为控股有限公司',
     position: '核心全栈 (AI) 架构师',
     duration: '2025.9 - 至今',
+    salary: '13k/月',
     description: '负责小程序裂变活动研发、创新AI 研发（Strapi CMS AI 解决方案）、物联网研发（海康监控/审讯设备）以及智慧农业架构设计。推动 AI 技术与传统业务深度融合，构建智能化解决方案。',
-    technologies: [,'uniapp电商多商户', '国资委科创AI助手','Strapi CMS（AI研发解决方案）',  '海康与固定审讯'],
+    technologies: [,'uniapp电商多商户', '国资委科创AI助手','Strapi（AI研发解决方案）',  '海康与固定审讯'],
   },
   {
     company: '礁岛（辽阳）软件技术有限公司',
     position: '一人公司 & AI 研发',
     duration: '2024.11 - 2025.8',
     description: '研发 CLAUDE、GPT 镜像站与大语言模型接口，处理跨境网络解决方案。探索 AI 前沿技术，构建高效的模型调用体系。',
-    technologies: ['Lua镜像站研发','跨境网络', '跨境渠道','店铺复制与运营','Vue3','React', 'LLM','Claude API', 'GPT API'],
+    technologies: ['Lua镜像站研发','跨境网络', '跨境渠道','店铺复制与运营','Vue3','React'],
   },
   {
     company: '湖北万亚软件技术有限公司',
     position: '软件架构师',
     duration: '2018.12 - 2025.1.31',
+    salary: '16.7k/月',
     description: '带组财税达项目（电子税务局RPA 自动化机器人、大规模集中记账）、薪酬与报销系统开发，服务于国家安全中心、农科院等单位。负责整体技术架构设计、团队技术指导及核心代码编写。',
     technologies: ['超融合自建机房','Kubernate','Spring Cloud', 'RPA', '大数据与复杂表格UI', '租户'],
   },
@@ -286,7 +289,6 @@ export const techStacks = [
   { name: '物联网', color: '#FF9800' },
   { name: '海康设备', color: '#2196F3' },
 
-  { name: '租户分库分表', color: '#9C27B0' },
   { name: '数据可视化', color: '#00BCD4' },
 ];
 
@@ -583,11 +585,6 @@ export const techData: TechItem[] = [
   {
     name: 'Vite',
     color: '#646CFF',
-    ranges: [],
-  },
-  {
-    name: '租户分库分表',
-    color: '#9C27B0',
     ranges: [],
   },
   // 2025年
