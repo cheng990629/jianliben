@@ -16,6 +16,7 @@ export const personalInfo = {
     { name: '离职证明', status: '✓ 已准备' },
     { name: '薪资证明', status: '✓ 已准备' },
     { name: '户口本', status: '✓ 已准备' },
+    { name: '身份证', status: '✓ 已准备' },
     { name: '毕业证', status: '✓ 已准备' },
     { name: '寸照', status: '✓ 已准备' },
     { name: '征信报告', status: '✓ 已准备' },
@@ -185,7 +186,7 @@ export const workExperience = [
     company: '湖北万亚软件技术有限公司',
     position: '软件架构师',
     duration: '2018.12 - 2025.1.31',
-    salary: '16.7k/月',
+    salary: '16.7-18k/月',
     description: '带组财税达项目（电子税务局RPA 自动化机器人、大规模集中记账）、薪酬与报销系统开发，服务于国家安全中心、农科院等单位。负责整体技术架构设计、团队技术指导及核心代码编写。',
     technologies: ['超融合自建机房','Kubernate','Spring Cloud', 'RPA', '大数据与复杂表格UI', '租户'],
   },
@@ -787,13 +788,18 @@ export const projects = [
 ];
 
 // ==================== 页面类型 ====================
-export type PageType = 'profile' | 'tech' | 'architecture' | 'projects' | 'prototype';
+export type PageType = 'profile' | 'tech' | 'architecture' | 'projects' | 'prototype' | 'caishuida' | 'teamtech' | 'otherprojects' | 'liaoningyiwei' | 'jiaodao';
 
 // 页面配置
 export const pages: { id: PageType; name: string; en: string }[] = [
   { id: 'profile', name: '个人介绍', en: 'Profile' },
-  { id: 'tech', name: '技术栈', en: 'Tech Stack' },
-  { id: 'architecture', name: '技术架构', en: 'Architecture' },
-  { id: 'projects', name: '项目经历', en: 'Projects' },
-  { id: 'prototype', name: '原型展示', en: 'Prototypes' },
+  // { id: 'tech', name: '技术栈', en: 'Tech Stack' },
+  // { id: 'architecture', name: '技术架构', en: 'Architecture' },
+  // { id: 'projects', name: '项目经历', en: 'Projects' },
+  // { id: 'prototype', name: '原型展示', en: 'Prototypes' },
+  { id: 'caishuida', name: '财税达', en: 'CaiShuiDa' },
+  { id: 'teamtech', name: '团队技术', en: 'Team Tech' },
+  { id: 'otherprojects', name: '其他项目', en: 'Other Projects' },
+  { id: 'liaoningyiwei', name: '辽宁易为', en: 'Liaoning Yiwei' },
+  { id: 'jiaodao', name: 'AI创业', en: 'AI Startup' },
 ];
