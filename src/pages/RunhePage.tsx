@@ -49,7 +49,7 @@ const RunhePage = ({ pageNum }: PageProps) => (
             ))}
           </div>
           <p className="mt-1 text-[9px] text-gray-400 leading-snug">
-            跨职能大团队协作，骨干多为互联网系背景
+            跨职能大团队协作，骨干多为阿里系背景
           </p>
         </div>
       </div>

@@ -45,7 +45,7 @@ export const personalInfo = {
   title: titleVariants.all.title,
   status: '离职 - 随时到岗',
   experience: '10年',
-  salary: '20 ~ 25k',
+  salary: '19 ~ 23k',
   /** @deprecated 请用 locationVariants；保留兼容默认意向城市 */
   location: locationVariants.intent.value,
   birthday: '90后',
