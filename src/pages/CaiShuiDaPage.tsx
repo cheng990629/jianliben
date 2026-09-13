@@ -9,8 +9,8 @@ const CaiShuiDaPage = ({ pageNum }: PageProps) => (
   <div className="p-6 h-full flex flex-col">
     {/* 标题区域 */}
     <div className="mb-2">
-      <h1 className="text-3xl font-light text-gray-800 tracking-widest uppercase">财税智能集中记账 SaaS 平台</h1>
-      <p className="text-sm text-gray-500 mt-1">湖北万亚软件技术有限公司 · 全栈软件架构师 · 项目周期： 2018.12 - 2025.8</p>
+      <h1 className="font-display text-3xl text-gray-800 tracking-wide">财税智能集中记账 SaaS 平台</h1>
+      <p className="font-accent text-sm text-gray-500 mt-1">湖北万亚软件技术有限公司 · 全栈软件架构师 · 项目周期： 2018.12 - 2025.8</p>
       <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-gray-500">
         <span className="px-2 py-0.5 bg-gray-100 rounded">财税达</span>
         <span className="px-2 py-0.5 bg-gray-100 rounded">全栈软件架构师</span>
@@ -40,7 +40,7 @@ const CaiShuiDaPage = ({ pageNum }: PageProps) => (
         <div>
           <div className="flex items-baseline justify-between mb-0.5">
             <h4 className="text-xs font-medium text-gray-800">1. 初期架构重构阶段（2018-2019）</h4>
-            <span className="text-[10px] text-gray-400">主责 · 架构</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · 架构</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed space-y-1">
             <p>
@@ -52,7 +52,7 @@ const CaiShuiDaPage = ({ pageNum }: PageProps) => (
         <div>
           <div className="flex items-baseline justify-between mb-0.5">
             <h4 className="text-xs font-medium text-gray-800">2. 定制化软件研发阶段（2019-2020）</h4>
-            <span className="text-[10px] text-gray-400">主责 · 前端</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · 前端</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed space-y-1">
             <p>
@@ -64,7 +64,7 @@ const CaiShuiDaPage = ({ pageNum }: PageProps) => (
         <div>
           <div className="flex items-baseline justify-between mb-0.5">
             <h4 className="text-xs font-medium text-gray-800">3. 云 SaaS 财税应用架构阶段（2020-2021）</h4>
-            <span className="text-[10px] text-gray-400">主责 · 全栈</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · 全栈</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed space-y-1">
             <p>
@@ -76,7 +76,7 @@ const CaiShuiDaPage = ({ pageNum }: PageProps) => (
         <div>
           <div className="flex items-baseline justify-between mb-0.5">
             <h4 className="text-xs font-medium text-gray-800">4. 混合云架构迭代阶段（2021-2022）</h4>
-            <span className="text-[10px] text-gray-400">主责 · 后端+多端</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · 后端+多端</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed space-y-1">
             <p>
@@ -88,7 +88,7 @@ const CaiShuiDaPage = ({ pageNum }: PageProps) => (
         <div>
           <div className="flex items-baseline justify-between mb-0.5">
             <h4 className="text-xs font-medium text-gray-800">5. 私有云架构升级阶段（2022-2023）</h4>
-            <span className="text-[10px] text-gray-400">主责 · 微服务</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · 微服务</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed space-y-1">
             <p>
@@ -100,7 +100,7 @@ const CaiShuiDaPage = ({ pageNum }: PageProps) => (
         <div>
           <div className="flex items-baseline justify-between mb-0.5">
             <h4 className="text-xs font-medium text-gray-800">6. 私有云 SaaS 集群化阶段（2023-2024）</h4>
-            <span className="text-[10px] text-gray-400">主责 · 运维</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · 运维</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed space-y-1">
             <p>
@@ -112,7 +112,7 @@ const CaiShuiDaPage = ({ pageNum }: PageProps) => (
         <div>
           <div className="flex items-baseline justify-between mb-0.5">
             <h4 className="text-xs font-medium text-gray-800">7. Python RPA 自动化技术落地阶段（2024-2025）</h4>
-            <span className="text-[10px] text-gray-400">主责 · RPA</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · RPA</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed space-y-1">
             <p>
@@ -165,7 +165,7 @@ const CaiShuiDaPage = ({ pageNum }: PageProps) => (
 
     <div className="mt-2 pt-2 border-t border-gray-100 flex justify-between text-xs text-gray-400">
       <span>财税达 · SaaS 平台</span>
-      <span>第 {pageNum} 页</span>
+      <span className="font-accent">第 {pageNum} 页</span>
     </div>
   </div>
 );

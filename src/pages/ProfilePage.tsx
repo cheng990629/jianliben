@@ -20,22 +20,19 @@ const ProfilePage = ({
   locationLabel = '意向城市',
   locationValue = personalInfo.location,
 }: ProfilePageProps) => (
-  <div className="p-8 h-full flex flex-col">
-    {/* 封面图片 */}
-
-    
+  <div className="p-7 h-full flex flex-col">
     {/* 标题区域 - 左右结构 */}
-    <div className="mb-3 min-h-[100px] flex items-stretch">
+    <div className="mb-2 flex items-stretch">
       <div className="flex justify-between w-full items-stretch">
         {/* 左侧：姓名 + 求职意向 + 基本信息 */}
-        <div className="h-16">
+        <div>
           <div className="flex items-baseline gap-6">
-            <h1 className="text-4xl font-medium text-gray-800 tracking-wide">{personalInfo.name}</h1>
-            <p className="text-lg text-gray-500 font-light">{jobTitle}</p>
+            <h1 className="font-display text-4xl text-gray-800 tracking-wide leading-none">{personalInfo.name}</h1>
+            <p className="font-accent text-base text-gray-500 tracking-wider">{jobTitle}</p>
           </div>
           
           {/* 基本信息 2x2 */}
-          <div className="mt-4 grid grid-cols-2 gap-x-12 gap-y-2 text-xs text-gray-500 w-[460px]">
+          <div className="mt-3 grid grid-cols-2 gap-x-12 gap-y-1.5 text-xs text-gray-500 w-[460px]">
             <div className="flex items-center gap-2">
               <span className="text-gray-400">年龄</span>
               <span className="text-gray-700">{personalInfo.birthday}</span>
@@ -96,7 +93,9 @@ const ProfilePage = ({
 
         {/* 核心技能 */}
         <div className="mt-2.5">
-          <h3 className="text-sm font-semibold text-gray-700 mb-1.5">核心技能</h3>
+          <h3 className="text-sm font-semibold text-gray-700 mb-1.5">
+            核心技能 <span className="font-accent text-gray-400 font-normal">Skills</span>
+          </h3>
           <div className="space-y-1.5">
             {[
               { label: 'AI全栈工程', value: 80, color: 'bg-gray-500' },
@@ -121,13 +120,15 @@ const ProfilePage = ({
 
         {/* 代表项目 */}
         <section className="mt-2.5">
-          <h3 className="text-sm font-semibold text-gray-700 mb-1.5">代表项目</h3>
+          <h3 className="text-sm font-semibold text-gray-700 mb-1.5">
+            代表项目 <span className="font-accent text-gray-400 font-normal">Projects</span>
+          </h3>
           <ul className="space-y-2">
             {personalInfo.quickProjects?.map((project, idx) => (
               <li key={idx}>
                 <div className="flex items-baseline justify-between gap-2">
                   <span className="text-xs text-gray-800 shrink-0">{project.name}</span>
-                  <span className="text-[10px] text-gray-400 text-right leading-snug truncate">{project.tech}</span>
+                  <span className="font-accent text-[10px] text-gray-400 text-right leading-snug truncate">{project.tech}</span>
                 </div>
                 {project.description && (
                   <p className="text-[10px] text-gray-500 leading-snug mt-0.5">
@@ -141,7 +142,9 @@ const ProfilePage = ({
 
         {/* 架构建设经验 */}
         <section className="mt-2.5">
-          <h3 className="text-sm font-semibold text-gray-700 mb-1.5">架构建设</h3>
+          <h3 className="text-sm font-semibold text-gray-700 mb-1.5">
+            架构建设 <span className="font-accent text-gray-400 font-normal">Architecture</span>
+          </h3>
           <ul className="space-y-2">
             {personalInfo.architectureExperience?.map((item, idx) => (
               <li key={idx}>
@@ -158,12 +161,14 @@ const ProfilePage = ({
 
         {/* 教育背景 */}
         <section className="mt-2.5">
-          <h3 className="text-sm font-semibold text-gray-700 mb-1.5">教育背景</h3>
+          <h3 className="text-sm font-semibold text-gray-700 mb-1.5">
+            教育背景 <span className="font-accent text-gray-400 font-normal">Education</span>
+          </h3>
           <ul className="space-y-1.5">
             {education.map(edu => (
               <li key={edu.school} className="flex items-baseline justify-between gap-2">
                 <span className="text-xs text-gray-800">{edu.school}</span>
-                <span className="text-[10px] text-gray-500 shrink-0">{edu.degree} · {edu.major}</span>
+                <span className="font-accent text-[10px] text-gray-500 shrink-0">{edu.degree} · {edu.major}</span>
               </li>
             ))}
           </ul>
@@ -171,7 +176,9 @@ const ProfilePage = ({
 
         {/* 入职资料就绪 */}
         <div className="mt-2.5">
-          <h3 className="text-sm font-semibold text-gray-700 mb-1.5">入职资料</h3>
+          <h3 className="text-sm font-semibold text-gray-700 mb-1.5">
+            入职资料 <span className="font-accent text-gray-400 font-normal">Onboarding</span>
+          </h3>
           <div className="grid grid-cols-2 gap-x-2 gap-y-1">
             {personalInfo.onboardingDocuments?.map((doc, idx) => (
               <div key={idx} className="flex items-center justify-between gap-1">
@@ -187,13 +194,17 @@ const ProfilePage = ({
       <div className="w-2/3 space-y-5">
         {/* 个人概述 */}
         <div>
-          <h3 className="text-sm font-semibold text-gray-700 mb-2.5 uppercase tracking-wide">关于我</h3>
+          <h3 className="text-sm font-semibold text-gray-700 mb-2.5 uppercase tracking-wide">
+            关于我 <span className="font-accent normal-case tracking-normal text-gray-400 font-normal">About</span>
+          </h3>
           <p className="text-sm text-gray-600 leading-snug">{personalInfo.summary}</p>
         </div>
 
         {/* 专长领域 + 技术栈 */}
         <div>
-          <h3 className="text-sm font-semibold text-gray-700 mb-2.5 uppercase tracking-wide">专业特长</h3>
+          <h3 className="text-sm font-semibold text-gray-700 mb-2.5 uppercase tracking-wide">
+            专业特长 <span className="font-accent normal-case tracking-normal text-gray-400 font-normal">Expertise</span>
+          </h3>
 
           {/* 技术栈 */}
           <div className="space-y-3">
@@ -235,7 +246,9 @@ const ProfilePage = ({
 
         {/* 工作经历 */}
         <div className="flex-1">
-          <h3 className="text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wide" >代表工作经历</h3>
+          <h3 className="text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wide">
+            代表工作经历 <span className="font-accent normal-case tracking-normal text-gray-400 font-normal">Experience</span>
+          </h3>
           <div className="space-y-5">
             {workExperience.map((work, idx) => (
               <div key={idx} className="relative pl-5 border-l border-gray-200">
@@ -243,12 +256,12 @@ const ProfilePage = ({
                 <div className="flex justify-between items-start gap-3 mb-2">
                   <div className="min-w-0">
                     <p className="text-sm font-medium text-gray-800">{work.position}</p>
-                    <p className="text-xs text-gray-400 mt-0.5">
+                    <p className="font-accent text-xs text-gray-400 mt-0.5 tracking-wider">
                       {work.duration}
                       {work.salary ? ` · 薪资：${work.salary}` : ''}
                     </p>
                   </div>
-                  <p className="text-xs text-gray-500 shrink-0 text-right">{work.company}</p>
+                  <p className="font-accent text-xs text-gray-500 shrink-0 text-right">{work.company}</p>
                 </div>
                 <p className="text-xs text-gray-600 leading-[1.7] mb-2.5">{work.description}</p>
                 <div className="flex flex-wrap gap-1.5">
@@ -271,8 +284,8 @@ const ProfilePage = ({
 
     {/* 底部 */}
     <div className="mt-auto pt-3 border-t border-gray-100 flex justify-between text-xs text-gray-400">
-      <span>简历</span>
-      <span>第 {pageNum} 页</span>
+      <span>简历 <span className="font-accent text-gray-300">Curriculum Vitae</span></span>
+      <span className="font-accent">第 {pageNum} 页</span>
     </div>
   </div>
 );

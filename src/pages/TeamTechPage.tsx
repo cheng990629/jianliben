@@ -9,8 +9,8 @@ const TeamTechPage = ({ pageNum }: PageProps) => (
   <div className="p-6 h-full flex flex-col">
     {/* 标题区域 */}
     <div className="mb-2">
-      <h1 className="text-3xl font-light text-gray-800 tracking-widest uppercase">团队技术贡献</h1>
-      <p className="text-sm text-gray-500 mt-1">湖北万亚软件技术有限公司 · 技术架构负责人</p>
+      <h1 className="font-display text-3xl text-gray-800 tracking-wide">团队技术贡献</h1>
+      <p className="font-accent text-sm text-gray-500 mt-1">湖北万亚软件技术有限公司 · 技术架构负责人</p>
       <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-gray-500">
         <span className="px-2 py-0.5 bg-gray-100 rounded">技术架构负责人</span>
         <span className="px-2 py-0.5 bg-gray-100 rounded">DevOps</span>
@@ -39,7 +39,7 @@ const TeamTechPage = ({ pageNum }: PageProps) => (
         <div>
           <div className="flex items-baseline justify-between mb-0.5">
             <h4 className="text-xs font-medium text-gray-800">后端技术体系深度演进</h4>
-            <span className="text-[10px] text-gray-400">主责 · 架构</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · 架构</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed">
             <p>
@@ -51,7 +51,7 @@ const TeamTechPage = ({ pageNum }: PageProps) => (
         <div>
           <div className="flex items-baseline justify-between mb-0.5">
             <h4 className="text-xs font-medium text-gray-800">前端架构现代化</h4>
-            <span className="text-[10px] text-gray-400">主责 · 前端</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · 前端</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed">
             <p>
@@ -63,7 +63,7 @@ const TeamTechPage = ({ pageNum }: PageProps) => (
         <div>
           <div className="flex items-baseline justify-between mb-0.5">
             <h4 className="text-xs font-medium text-gray-800">多租户权限与资源隔离 / 数据库架构升级</h4>
-            <span className="text-[10px] text-gray-400">主责 · 中台</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · 中台</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed">
             <p>
@@ -80,7 +80,7 @@ const TeamTechPage = ({ pageNum }: PageProps) => (
         <div>
           <div className="flex items-baseline justify-between mb-0.5">
             <h4 className="text-xs font-medium text-gray-800">代码管理 · 制品镜像 · CI/CD · 云原生 · 开发环境</h4>
-            <span className="text-[10px] text-gray-400">主责 · DevOps</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · DevOps</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed">
             <p>
@@ -97,7 +97,7 @@ const TeamTechPage = ({ pageNum }: PageProps) => (
         <div>
           <div className="flex items-baseline justify-between mb-0.5">
             <h4 className="text-xs font-medium text-gray-800">通义灵码 · ChatGPT 桌面客户端 · Claude · AI 商业化探索</h4>
-            <span className="text-[10px] text-gray-400">主责 · AI</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · AI</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed">
             <p>
@@ -154,7 +154,7 @@ const TeamTechPage = ({ pageNum }: PageProps) => (
 
     <div className="mt-2 pt-2 border-t border-gray-100 flex justify-between text-xs text-gray-400">
       <span>团队技术贡献</span>
-      <span>第 {pageNum} 页</span>
+      <span className="font-accent">第 {pageNum} 页</span>
     </div>
   </div>
 );

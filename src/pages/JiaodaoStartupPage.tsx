@@ -9,8 +9,8 @@ const JiaodaoStartupPage = ({ pageNum }: PageProps) => (
   <div className="p-6 h-full flex flex-col">
     {/* 标题区域 */}
     <div className="mb-2">
-      <h1 className="text-3xl font-light text-gray-800 tracking-widest uppercase">一人公司 OPC · AI 算力平台</h1>
-      <p className="text-sm text-gray-500 mt-1">
+      <h1 className="font-display text-3xl text-gray-800 tracking-wide">一人公司 OPC · AI 算力平台</h1>
+      <p className="font-accent text-sm text-gray-500 mt-1">
         礁岛（辽阳）软件技术有限公司 · 一人有限责任公司（OPC）创始人 / 全栈架构 · 2024.11 - 2025.8
       </p>
       <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-gray-500">
@@ -65,7 +65,7 @@ const JiaodaoStartupPage = ({ pageNum }: PageProps) => (
             <h4 className="text-xs font-medium text-gray-800">
               1. OpenResty + Lua 边缘网关 · 多租户会话隔离 · 协议兼容层
             </h4>
-            <span className="text-[10px] text-gray-400">主责 · 网关架构</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · 网关架构</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed space-y-1">
             <p>
@@ -79,7 +79,7 @@ const JiaodaoStartupPage = ({ pageNum }: PageProps) => (
             <h4 className="text-xs font-medium text-gray-800">
               2. 共享 API-Key 池调度 · Token 计量计费 · 故障转移
             </h4>
-            <span className="text-[10px] text-gray-400">主责 · 调度/计费</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · 调度/计费</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed space-y-1">
             <p>
@@ -93,7 +93,7 @@ const JiaodaoStartupPage = ({ pageNum }: PageProps) => (
             <h4 className="text-xs font-medium text-gray-800">
               3. 跨境账号 / 虚拟资产供应链 · 生命周期自动化
             </h4>
-            <span className="text-[10px] text-gray-400">主责 · 供应链自动化</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · 供应链自动化</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed space-y-1">
             <p>
@@ -107,7 +107,7 @@ const JiaodaoStartupPage = ({ pageNum }: PageProps) => (
             <h4 className="text-xs font-medium text-gray-800">
               4. 对话工作台 · 项目空间 · 多端接入（Web / 桌面）
             </h4>
-            <span className="text-[10px] text-gray-400">主责 · 产品全栈</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · 产品全栈</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed space-y-1">
             <p>
@@ -121,7 +121,7 @@ const JiaodaoStartupPage = ({ pageNum }: PageProps) => (
             <h4 className="text-xs font-medium text-gray-800">
               5. 可观测性 · 告警闭环 · 一人运维高可用
             </h4>
-            <span className="text-[10px] text-gray-400">主责 · SRE</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · SRE</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed space-y-1">
             <p>
@@ -135,7 +135,7 @@ const JiaodaoStartupPage = ({ pageNum }: PageProps) => (
             <h4 className="text-xs font-medium text-gray-800">
               6. OPC 一人公司运营闭环 · 淘宝标准化交付
             </h4>
-            <span className="text-[10px] text-gray-400">主责 · 商业化</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · 商业化</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed space-y-1">
             <p>
@@ -188,7 +188,7 @@ const JiaodaoStartupPage = ({ pageNum }: PageProps) => (
 
     <div className="mt-2 pt-2 border-t border-gray-100 flex justify-between text-xs text-gray-400">
       <span>礁岛 · 一人公司 OPC · AI 算力平台</span>
-      <span>第 {pageNum} 页</span>
+      <span className="font-accent">第 {pageNum} 页</span>
     </div>
   </div>
 );

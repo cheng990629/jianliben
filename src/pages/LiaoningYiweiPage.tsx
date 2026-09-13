@@ -9,8 +9,8 @@ const LiaoningYiweiPage = ({ pageNum }: PageProps) => (
   <div className="p-6 h-full flex flex-col">
     {/* 标题区域 */}
     <div className="mb-2">
-      <h1 className="text-3xl font-light text-gray-800 tracking-widest uppercase">辽宁易为项目</h1>
-      <p className="text-sm text-gray-500 mt-1">辽宁易为控股集团有限公司 · 核心全栈 (AI) 架构师 · 2025.9 - 2026.03.19</p>
+      <h1 className="font-display text-3xl text-gray-800 tracking-wide">辽宁易为项目</h1>
+      <p className="font-accent text-sm text-gray-500 mt-1">辽宁易为控股集团有限公司 · 核心全栈 (AI) 架构师 · 2025.9 - 2026.03.19</p>
       <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-gray-500">
         <span className="px-2 py-0.5 bg-gray-100 rounded">辽宁易为</span>
         <span className="px-2 py-0.5 bg-gray-100 rounded">核心全栈 (AI) 架构师</span>
@@ -37,7 +37,7 @@ const LiaoningYiweiPage = ({ pageNum }: PageProps) => (
         <div>
           <div className="flex items-baseline justify-between mb-0.5">
             <h4 className="text-xs font-medium text-gray-800">1. 珍酒城（私域电商 · 多商户）</h4>
-            <span className="text-[10px] text-gray-400">主责 · SpringBoot / Uniapp</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · SpringBoot / Uniapp</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed space-y-1">
             <p>
@@ -52,7 +52,7 @@ const LiaoningYiweiPage = ({ pageNum }: PageProps) => (
         <div>
           <div className="flex items-baseline justify-between mb-0.5">
             <h4 className="text-xs font-medium text-gray-800">2. 国资委科创助手（Dify Agent · Vue3+TS 前端）</h4>
-            <span className="text-[10px] text-gray-400">主责 · AI 前端</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · AI 前端</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed space-y-1">
             <p>
@@ -67,7 +67,7 @@ const LiaoningYiweiPage = ({ pageNum }: PageProps) => (
         <div>
           <div className="flex items-baseline justify-between mb-0.5">
             <h4 className="text-xs font-medium text-gray-800">3. TK 店群管理平台（跨境供销）</h4>
-            <span className="text-[10px] text-gray-400">主责 · SpringBoot</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · SpringBoot</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed space-y-1">
             <p>
@@ -82,7 +82,7 @@ const LiaoningYiweiPage = ({ pageNum }: PageProps) => (
         <div>
           <div className="flex items-baseline justify-between mb-0.5">
             <h4 className="text-xs font-medium text-gray-800">4. 其他项目</h4>
-            <span className="text-[10px] text-gray-400">参与 · 多业务线</span>
+            <span className="font-accent text-[10px] text-gray-400">参与 · 多业务线</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed space-y-1.5">
             <p>
@@ -146,7 +146,7 @@ const LiaoningYiweiPage = ({ pageNum }: PageProps) => (
 
     <div className="mt-2 pt-2 border-t border-gray-100 flex justify-between text-xs text-gray-400">
       <span>辽宁易为项目</span>
-      <span>第 {pageNum} 页</span>
+      <span className="font-accent">第 {pageNum} 页</span>
     </div>
   </div>
 );

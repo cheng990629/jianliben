@@ -323,7 +323,7 @@ export default function App() {
 
       {/* 技术引擎水印 */}
       <div data-export-chrome className="mt-3 flex items-center justify-center gap-3 text-xs text-gray-400 print:hidden">
-        <span>Built with</span>
+        <span className="font-accent">Built with</span>
         <span className="flex items-center gap-1">
           <span className="text-gray-500">⚡</span>
           <span className="text-gray-600">Cursor</span>

@@ -136,7 +136,7 @@ export const personalInfo = {
     },
     {
       name: '中源谈话工作平台',
-      tech: '音视频采集转写/谈话流程/光盘刻录',
+      tech: '音视频采集转写/光盘刻录',
       description: '谈话音视频采集转写、谈话全流程管理、记录归档与光盘刻录',
       scale: '',
     },
@@ -207,7 +207,7 @@ export const workExperience = [
     duration: '2018.12 - 2025.7.29',
     salary: '',
     description: '财税 SaaS 平台架构负责人，带领团队完成 RPA 办税机器人、集中记账、薪酬报销系统研发，服务国家安全中心、农科院等政企客户。基于 SpringCloud+K8s 搭建多租户财税平台，设计 RPA 自动化流程，替代人工账务操作；负责超融合机房方案、复杂报表引擎，主导架构评审、核心编码与团队技术指导。',
-    technologies: ['超融合自建机房','Kubernate','Spring Cloud', 'RPA', '多租戶设计', '复杂报表与交互'],
+    technologies: ['超融合自建机房','Kubernate','Spring Cloud', 'RPA', '多租戶设计', '报表与交互'],
   },
 ];
 

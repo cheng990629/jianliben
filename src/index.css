@@ -18,6 +18,22 @@ body {
   color: #f8fafc;
 }
 
+/* 展示衬线：英文标题 / 斜体副信息 */
+.font-display {
+  font-family: 'Instrument Serif', Georgia, 'Times New Roman', 'Noto Serif SC',
+    'Songti SC', serif;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+/* 斜体强调：角色、周期、英文副标题；拉丁用真斜体，CJK 略倾斜 */
+.font-accent {
+  font-family: 'Instrument Serif', Georgia, 'Times New Roman', 'Noto Serif SC',
+    'Songti SC', serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
 /* A4 页面尺寸定义 */
 @page {
   size: A4;

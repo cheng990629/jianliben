@@ -10,8 +10,8 @@ const ArchitecturePage = ({ pageNum }: ArchitecturePageProps) => (
   <div className="p-6 h-full flex flex-col">
     {/* 标题区域 */}
     <div className="mb-2">
-      <h1 className="text-3xl font-light text-gray-800 tracking-widest uppercase">System Architecture</h1>
-      <p className="text-sm text-gray-500 mt-1">微服务架构 · 云原生设计</p>
+      <h1 className="font-display italic text-3xl text-gray-800 tracking-widest uppercase">System Architecture</h1>
+      <p className="font-accent text-sm text-gray-500 mt-1">微服务架构 · 云原生设计</p>
       <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-gray-500">
         <span className="px-2 py-0.5 bg-gray-100 rounded">Microservices</span>
         <span className="px-2 py-0.5 bg-gray-100 rounded">Cloud Native</span>
@@ -83,7 +83,7 @@ const ArchitecturePage = ({ pageNum }: ArchitecturePageProps) => (
 
     <div className="mt-2 pt-2 border-t border-gray-100 flex justify-between text-xs text-gray-400">
       <span>技术架构 · System Architecture</span>
-      <span>第 {pageNum} 页</span>
+      <span className="font-accent">第 {pageNum} 页</span>
     </div>
   </div>
 );

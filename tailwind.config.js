@@ -6,6 +6,28 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        display: [
+          'Instrument Serif',
+          'Georgia',
+          'Times New Roman',
+          'Noto Serif SC',
+          'Songti SC',
+          'serif',
+        ],
+        sans: [
+          'Noto Sans CJK SC',
+          'Noto Sans SC',
+          'Microsoft YaHei',
+          '微软雅黑',
+          'PingFang SC',
+          'Hiragino Sans GB',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'sans-serif',
+        ],
+      },
       colors: {
         primary: {
           50: '#f0f9ff',

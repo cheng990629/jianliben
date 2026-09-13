@@ -9,8 +9,8 @@ const RunhePage = ({ pageNum }: PageProps) => (
   <div className="p-6 h-full flex flex-col">
     {/* 标题区域 */}
     <div className="mb-2">
-      <h1 className="text-3xl font-light text-gray-800 tracking-widest uppercase">空间态势仿真智能体</h1>
-      <p className="text-sm text-gray-500 mt-1">润和软件 · 全栈 (Agent) 研发 · 项目周期： 2025年10月至今</p>
+      <h1 className="font-display text-3xl text-gray-800 tracking-wide">空间态势仿真智能体</h1>
+      <p className="font-accent text-sm text-gray-500 mt-1">润和软件 · 全栈 (Agent) 研发 · 项目周期： 2025年10月至今</p>
       <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-gray-500">
         <span className="px-2 py-0.5 bg-gray-100 rounded text-center">润和软件（创业板）</span>
         <span className="px-2 py-0.5 bg-gray-100 rounded text-center">全栈 (Agent) 研发工程师</span>
@@ -61,7 +61,7 @@ const RunhePage = ({ pageNum }: PageProps) => (
         <div>
           <div className="flex items-baseline justify-between mb-0.5">
             <h4 className="text-xs font-medium text-gray-800">1. 主系统独立前端（屏1 数字人 / 屏2 多Agent节点 / 规则引擎）</h4>
-            <span className="text-[10px] text-gray-400">主责 · 前端全栈</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · 前端全栈</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed space-y-1">
             <p>
@@ -73,7 +73,7 @@ const RunhePage = ({ pageNum }: PageProps) => (
         <div>
           <div className="flex items-baseline justify-between mb-0.5">
             <h4 className="text-xs font-medium text-gray-800">2. 内网服务器 · 算力与模型与服务部署调优</h4>
-            <span className="text-[10px] text-gray-400">主责 · 运维+算力</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · 运维+算力</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed space-y-1">
             <p>
@@ -85,7 +85,7 @@ const RunhePage = ({ pageNum }: PageProps) => (
         <div>
           <div className="flex items-baseline justify-between mb-0.5">
             <h4 className="text-xs font-medium text-gray-800">3. LLM 路由分发 · Text2SQL · RAG · 自由对话后端</h4>
-            <span className="text-[10px] text-gray-400">主责 · 后端</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · 后端</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed space-y-1">
             <p>
@@ -97,7 +97,7 @@ const RunhePage = ({ pageNum }: PageProps) => (
         <div>
           <div className="flex items-baseline justify-between mb-0.5">
             <h4 className="text-xs font-medium text-gray-800">4. 知识库 &amp; 会议纪要 &amp; 公文撰写 &amp; 三心二意</h4>
-            <span className="text-[10px] text-gray-400">主责 · 全栈</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · 全栈</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed space-y-1">
             <p>
@@ -109,7 +109,7 @@ const RunhePage = ({ pageNum }: PageProps) => (
         <div>
           <div className="flex items-baseline justify-between mb-0.5">
             <h4 className="text-xs font-medium text-gray-800">5. 星云图 · 资源屏</h4>
-            <span className="text-[10px] text-gray-400">主责 · 前端</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · 前端</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed space-y-1">
             <p>
@@ -121,7 +121,7 @@ const RunhePage = ({ pageNum }: PageProps) => (
         <div>
           <div className="flex items-baseline justify-between mb-0.5">
             <h4 className="text-xs font-medium text-gray-800">6. 重塑内网工作形态</h4>
-            <span className="text-[10px] text-gray-400">主责 · 流程+工具</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · 流程+工具</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed space-y-1">
             <p>
@@ -174,7 +174,7 @@ const RunhePage = ({ pageNum }: PageProps) => (
 
     <div className="mt-2 pt-2 border-t border-gray-100 flex justify-between text-xs text-gray-400">
       <span>润和 · 空间态势仿真智能体</span>
-      <span>第 {pageNum} 页</span>
+      <span className="font-accent">第 {pageNum} 页</span>
     </div>
   </div>
 );

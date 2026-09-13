@@ -9,8 +9,8 @@ const OtherProjectsPage = ({ pageNum }: PageProps) => (
   <div className="p-6 h-full flex flex-col">
     {/* 标题区域 */}
     <div className="mb-2">
-      <h1 className="text-3xl font-light text-gray-800 tracking-widest uppercase">其他项目</h1>
-      <p className="text-sm text-gray-500 mt-1">多领域项目经验，涵盖薪酬、报销、医药、看护、软著等系统</p>
+      <h1 className="font-display text-3xl text-gray-800 tracking-wide">其他项目</h1>
+      <p className="font-accent text-sm text-gray-500 mt-1">多领域项目经验，涵盖薪酬、报销、医药、看护、软著等系统</p>
       <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-gray-500">
         <span className="px-2 py-0.5 bg-gray-100 rounded">湖北万亚软件技术有限公司</span>
         <span className="px-2 py-0.5 bg-gray-100 rounded">全栈开发</span>
@@ -28,7 +28,7 @@ const OtherProjectsPage = ({ pageNum }: PageProps) => (
         <div>
           <div className="flex items-baseline justify-between mb-0.5">
             <h4 className="text-xs font-medium text-gray-800">1. 希格薪酬系统</h4>
-            <span className="text-[10px] text-gray-400">参与 · 全栈</span>
+            <span className="font-accent text-[10px] text-gray-400">参与 · 全栈</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed">
             <p>
@@ -40,7 +40,7 @@ const OtherProjectsPage = ({ pageNum }: PageProps) => (
         <div>
           <div className="flex items-baseline justify-between mb-0.5">
             <h4 className="text-xs font-medium text-gray-800">2. 蟒蛇报销（在线报销平台）</h4>
-            <span className="text-[10px] text-gray-400">主责 · 全栈</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · 全栈</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed">
             <p>
@@ -52,7 +52,7 @@ const OtherProjectsPage = ({ pageNum }: PageProps) => (
         <div>
           <div className="flex items-baseline justify-between mb-0.5">
             <h4 className="text-xs font-medium text-gray-800">3. 医药品管理系统</h4>
-            <span className="text-[10px] text-gray-400">主责 · 全栈</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · 全栈</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed">
             <p>
@@ -64,7 +64,7 @@ const OtherProjectsPage = ({ pageNum }: PageProps) => (
         <div>
           <div className="flex items-baseline justify-between mb-0.5">
             <h4 className="text-xs font-medium text-gray-800">4. 批量软著申请系统（PHP）</h4>
-            <span className="text-[10px] text-gray-400">主责 · 后端</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · 后端</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed">
             <p>
@@ -76,7 +76,7 @@ const OtherProjectsPage = ({ pageNum }: PageProps) => (
         <div>
           <div className="flex items-baseline justify-between mb-0.5">
             <h4 className="text-xs font-medium text-gray-800">5. 财税达工厂 — 大规模代账作业中心</h4>
-            <span className="text-[10px] text-gray-400">主责 · 架构</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · 架构</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed">
             <p>
@@ -88,7 +88,7 @@ const OtherProjectsPage = ({ pageNum }: PageProps) => (
         <div>
           <div className="flex items-baseline justify-between mb-0.5">
             <h4 className="text-xs font-medium text-gray-800">6. 各院所定制化软件集群（JSP + Layui）</h4>
-            <span className="text-[10px] text-gray-400">主责 · 全栈</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · 全栈</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed">
             <p>
@@ -100,7 +100,7 @@ const OtherProjectsPage = ({ pageNum }: PageProps) => (
         <div>
           <div className="flex items-baseline justify-between mb-0.5">
             <h4 className="text-xs font-medium text-gray-800">7. 康泰智慧看护（若依 / 人脸情绪识别 / 蓝牙设备）</h4>
-            <span className="text-[10px] text-gray-400">主责 · 全栈</span>
+            <span className="font-accent text-[10px] text-gray-400">主责 · 全栈</span>
           </div>
           <div className="border-l-2 border-gray-300 pl-3 text-xs text-gray-600 leading-relaxed">
             <p>
@@ -146,7 +146,7 @@ const OtherProjectsPage = ({ pageNum }: PageProps) => (
 
     <div className="mt-2 pt-2 border-t border-gray-100 flex justify-between text-xs text-gray-400">
       <span>其他项目</span>
-      <span>第 {pageNum} 页</span>
+      <span className="font-accent">第 {pageNum} 页</span>
     </div>
   </div>
 );
