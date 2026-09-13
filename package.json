@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "export:service": "cd export-service && ./run.sh"
   },
   "dependencies": {
     "react": "^18.2.0",

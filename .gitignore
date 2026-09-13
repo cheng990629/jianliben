@@ -11,7 +11,12 @@ build/
 
 # Environment
 .env
-.env.local
+.env.*
+!.env.example
+
+# Python
+.venv/
+**/__pycache__/
 
 # Logs
 npm-debug.log*
@@ -24,3 +29,19 @@ Thumbs.db
 
 # Lock file
 package-lock.json
+
+# Brainstorm mockups
+.superpowers/
+
+# Playwright CJK fonts (generated)
+export-service/fonts/*.otf
+export-service/fonts/*.ttf
+
+# Local export / smoke artifacts
+*.pdf
+*.docx
+*.doc
+smoke-*.pdf
+smoke-*.docx
+resume-*.pdf
+resume-*.docx

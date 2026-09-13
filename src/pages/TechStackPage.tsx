@@ -173,19 +173,20 @@ const TechStackPage = ({ pageNum }: TechStackPageProps) => {
   );
 
   return (
-    <div className="p-10 h-full relative">
+    <div className="p-6 h-full relative flex flex-col">
       {/* 标题区域 */}
-      <div className="mb-3">
+      <div className="mb-2">
         <h1 className="text-3xl font-light text-gray-800 tracking-widest uppercase">Technology Timeline</h1>
-        <div className="mt-2 h-px bg-gray-300"></div>
-        <div className="mt-3 flex justify-between text-xs text-gray-500">
-          <span>2016 — 2027</span>
-          <span>{techData.length} Technologies</span>
+        <p className="text-sm text-gray-500 mt-1">技术栈时间轴 · 2016 — 2027</p>
+        <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-gray-500">
+          <span className="px-2 py-0.5 bg-gray-100 rounded">{techData.length} Technologies</span>
+          <span className="px-2 py-0.5 bg-gray-100 rounded">Timeline / Matrix</span>
         </div>
+        <div className="mt-2 h-px bg-gray-300"></div>
       </div>
 
       {/* 模板切换按钮（打印时隐藏） */}
-      <div className="absolute top-10 right-10 flex gap-1 print:hidden">
+      <div className="absolute top-6 right-6 flex gap-1 print:hidden">
         <button
           onClick={() => setTemplate('A')}
           className={`px-3 py-1 text-xs rounded transition-colors ${
@@ -230,9 +231,9 @@ const TechStackPage = ({ pageNum }: TechStackPageProps) => {
       </div>
 
       {/* 底部 */}
-      <div className="mt-4 pt-3 border-t border-gray-100 flex justify-between text-[10px] text-gray-400">
-        <span>Technology Stack</span>
-        <span>Page {pageNum}</span>
+      <div className="mt-2 pt-2 border-t border-gray-100 flex justify-between text-xs text-gray-400">
+        <span>技术栈 · Technology Stack</span>
+        <span>第 {pageNum} 页</span>
       </div>
     </div>
   );

@@ -8,10 +8,18 @@ import {
 
 interface ProfilePageProps {
   pageNum: number;
+  jobTitle?: string;
+  locationLabel?: string;
+  locationValue?: string;
 }
 
 // ==================== 页面1：个人介绍 ====================
-const ProfilePage = ({ pageNum }: ProfilePageProps) => (
+const ProfilePage = ({
+  pageNum,
+  jobTitle = personalInfo.title,
+  locationLabel = '意向城市',
+  locationValue = personalInfo.location,
+}: ProfilePageProps) => (
   <div className="p-8 h-full flex flex-col">
     {/* 封面图片 */}
 
@@ -22,14 +30,14 @@ const ProfilePage = ({ pageNum }: ProfilePageProps) => (
         {/* 左侧：姓名 + 求职意向 + 基本信息 */}
         <div className="h-16">
           <div className="flex items-baseline gap-6">
-            <h1 className="text-4xl font-light text-gray-800 tracking-widest uppercase">{personalInfo.name}</h1>
-            <p className="text-lg text-gray-500 font-light">{personalInfo.title}</p>
+            <h1 className="text-4xl font-medium text-gray-800 tracking-wide">{personalInfo.name}</h1>
+            <p className="text-lg text-gray-500 font-light">{jobTitle}</p>
           </div>
           
           {/* 基本信息 2x2 */}
           <div className="mt-4 grid grid-cols-2 gap-x-12 gap-y-2 text-xs text-gray-500 w-[460px]">
             <div className="flex items-center gap-2">
-              <span className="text-gray-400">生日</span>
+              <span className="text-gray-400">年龄</span>
               <span className="text-gray-700">{personalInfo.birthday}</span>
             </div>
             <div className="flex items-center gap-2">
@@ -37,8 +45,8 @@ const ProfilePage = ({ pageNum }: ProfilePageProps) => (
               <span className="text-gray-700">{personalInfo.phone}</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-gray-400">现居</span>
-              <span className="text-gray-700">{personalInfo.location}</span>
+              <span className="text-gray-400">{locationLabel}</span>
+              <span className="text-gray-700">{locationValue}</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-gray-400">邮箱</span>
@@ -69,7 +77,7 @@ const ProfilePage = ({ pageNum }: ProfilePageProps) => (
 
     {/* 左侧信息 */}
     <div className="flex gap-6 flex-1">
-      <div className="w-1/3">
+      <div className="w-1/3 flex flex-col">
         {/* 工作信息 */}
         <div className="mt-1 space-y-1 text-xs text-gray-500">
           <div className="flex items-center gap-2">
@@ -86,183 +94,164 @@ const ProfilePage = ({ pageNum }: ProfilePageProps) => (
           </div>
         </div>
 
-        {/* 代表项目 */}
-        <div className="mt-2">
-          <h3 className="text-sm font-medium text-gray-700 mb-2">代表项目</h3>
-          <div className="space-y-1">
-            {personalInfo.quickProjects?.map((project, idx) => (
-              <div key={idx} className="flex items-center gap-2">
-                <span className="text-xs font-medium text-gray-700">{project.name}</span>
-                <span className="text-[10px] text-gray-400">|</span>
-                <span className="text-xs text-gray-500">{project.tech}</span>
-                {project.scale && (
-                  <>
-                    <span className="text-[10px] text-gray-400">|</span>
-                    <span className="text-xs text-gray-400">{project.scale}</span>
-                  </>
-                )}
+        {/* 核心技能 */}
+        <div className="mt-2.5">
+          <h3 className="text-sm font-semibold text-gray-700 mb-1.5">核心技能</h3>
+          <div className="space-y-1.5">
+            {[
+              { label: 'AI全栈工程', value: 80, color: 'bg-gray-500' },
+              { label: '前端研发', value: 96, color: 'bg-gray-700' },
+              { label: '后端研发', value: 72, color: 'bg-gray-800' },
+              { label: '全模态研发', value: 55, color: 'bg-gray-600' },
+              { label: '云原生架构', value: 64, color: 'bg-gray-600' },
+              { label: 'DevOps部署调优', value: 88, color: 'bg-gray-500' },
+            ].map((skill, idx) => (
+              <div key={idx}>
+                <div className="flex justify-between items-center mb-0.5">
+                  <span className="text-xs text-gray-700">{skill.label}</span>
+                  <span className="text-[10px] text-gray-500"></span>
+                </div>
+                <div className="h-1 bg-gray-200 rounded-full overflow-hidden border border-gray-300">
+                  <div className={`h-full ${skill.color} rounded-full`} style={{ width: `${skill.value}%` }}></div>
+                </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* 技能分类 */}
-        <div className="mt-2">
-          <h3 className="text-sm font-medium text-gray-700 mb-2">技术栈</h3>
-          {skillCategories.map(cat => (
-            <div key={cat.name} className="mb-2">
-              <p className="text-xs text-gray-500 mb-1">{cat.name}</p>
-              <div className="flex flex-wrap gap-1">
-                {cat.skills.map(skill => (
-                  <span 
-                    key={skill.name}
-                    className="px-2 py-0.5 bg-gray-100 text-gray-600 text-[10px] rounded"
-                  >
-                    {skill.name}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
+        {/* 代表项目 */}
+        <section className="mt-2.5">
+          <h3 className="text-sm font-semibold text-gray-700 mb-1.5">代表项目</h3>
+          <ul className="space-y-2">
+            {personalInfo.quickProjects?.map((project, idx) => (
+              <li key={idx}>
+                <div className="flex items-baseline justify-between gap-2">
+                  <span className="text-xs text-gray-800 shrink-0">{project.name}</span>
+                  <span className="text-[10px] text-gray-400 text-right leading-snug truncate">{project.tech}</span>
+                </div>
+                {project.description && (
+                  <p className="text-[10px] text-gray-500 leading-snug mt-0.5">
+                    {project.description}
+                  </p>
+                )}
+              </li>
+            ))}
+          </ul>
+        </section>
 
         {/* 架构建设经验 */}
-        <div className="mt-3">
-          <h3 className="text-sm font-medium text-gray-700 mb-2">架构建设</h3>
-          <div className="space-y-1">
+        <section className="mt-2.5">
+          <h3 className="text-sm font-semibold text-gray-700 mb-1.5">架构建设</h3>
+          <ul className="space-y-2">
             {personalInfo.architectureExperience?.map((item, idx) => (
-              <div key={idx} className="flex items-center gap-2">
-                <div className="w-1 h-1 rounded-full bg-gray-400"></div>
-                <span className="text-xs text-gray-600">{item.title}</span>
+              <li key={idx}>
+                <p className="text-xs text-gray-800 leading-snug">{item.title}</p>
+                {item.description && (
+                  <p className="text-[10px] text-gray-500 leading-snug mt-0.5">
+                    {item.description}
+                  </p>
+                )}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* 教育背景 */}
+        <section className="mt-2.5">
+          <h3 className="text-sm font-semibold text-gray-700 mb-1.5">教育背景</h3>
+          <ul className="space-y-1.5">
+            {education.map(edu => (
+              <li key={edu.school} className="flex items-baseline justify-between gap-2">
+                <span className="text-xs text-gray-800">{edu.school}</span>
+                <span className="text-[10px] text-gray-500 shrink-0">{edu.degree} · {edu.major}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* 入职资料就绪 */}
+        <div className="mt-2.5">
+          <h3 className="text-sm font-semibold text-gray-700 mb-1.5">入职资料</h3>
+          <div className="grid grid-cols-2 gap-x-2 gap-y-1">
+            {personalInfo.onboardingDocuments?.map((doc, idx) => (
+              <div key={idx} className="flex items-center justify-between gap-1">
+                <span className="text-[10px] text-gray-600 truncate">{doc.name}</span>
+                <span className="text-[9px] text-gray-400 shrink-0">{doc.status}</span>
               </div>
             ))}
           </div>
         </div>
-
-       
-         {/* 教育背景 */}
-         <div className="mt-2">
-          <h3 className="text-sm font-medium text-gray-700 mb-2">教育背景</h3>
-          {education.map(edu => (
-            <div key={edu.school} className="mb-2">
-              <p className="text-sm text-gray-800">{edu.school}</p>
-              <p className="text-xs text-gray-500">{edu.degree} · {edu.major}</p>
-              <p className="text-xs text-gray-400">{edu.year} 自考</p>
-            </div>
-          ))}
-        </div>
-
-        {/* 入职资料 */}
-        {personalInfo.onboardingDocuments && (
-          <div className="mt-3">
-            <h3 className="text-sm font-medium text-gray-700 mb-2">入职资料</h3>
-            <div className="grid grid-cols-2 gap-1.5">
-              {personalInfo.onboardingDocuments.map((doc, idx) => (
-                <div key={idx} className="flex items-center gap-1.5">
-                  <span className="text-xs text-green-600">✓</span>
-                  <span className="text-xs text-gray-600">{doc.name}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
 
       {/* 右侧内容 */}
-      <div className="w-2/3 space-y-4">
+      <div className="w-2/3 space-y-5">
         {/* 个人概述 */}
         <div>
-          <h3 className="text-sm font-medium text-gray-700 mb-2 uppercase tracking-wide">关于我</h3>
-          <p className="text-sm text-gray-600 leading-relaxed">{personalInfo.summary}</p>
+          <h3 className="text-sm font-semibold text-gray-700 mb-2.5 uppercase tracking-wide">关于我</h3>
+          <p className="text-sm text-gray-600 leading-snug">{personalInfo.summary}</p>
         </div>
 
-        {/* 专长领域 */}
-        <div className="mt-1">
-          <h3 className="text-sm font-medium text-gray-700 mb-2 uppercase tracking-wide">专业特长</h3>
-          {/* 技术架构专长 */}
-          <div className="mb-1">
-            <div className="flex flex-wrap gap-2">
-              {personalInfo.specialties.map((spec, idx) => (
-                <div key={idx} className="flex items-center gap-1.5">
-                  <div className="w-1 h-1 rounded-full bg-gray-400"></div>
-                  <span className="text-xs text-gray-600">{spec}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          {/* Database 专长 */}
-          <div className="mb-1">
-            <div className="flex flex-wrap gap-2">
-              {personalInfo.specialtiesDatabase?.map((spec, idx) => (
-                <div key={idx} className="flex items-center gap-1.5">
-                  <div className="w-1 h-1 rounded-full bg-gray-400"></div>
-                  <span className="text-xs text-gray-600">{spec}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          {/* Architecture 专长 */}
-          <div>
-            <div className="flex flex-wrap gap-2">
-              {personalInfo.specialtiesArchitecture?.map((spec, idx) => (
-                <div key={idx} className="flex items-center gap-1.5">
-                  <div className="w-1 h-1 rounded-full bg-gray-400"></div>
-                  <span className="text-xs text-gray-600">{spec}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* 核心技能矩阵 - 优化为适合黑白打印 */}
+        {/* 专长领域 + 技术栈 */}
         <div>
-          <h3 className="text-sm font-medium text-gray-700 mb-3 uppercase tracking-wide">核心技能</h3>
-          <div className="grid grid-cols-3 gap-3">
-            {[
-              { label: '后端研发', value: 92, color: 'bg-gray-800' },
-              { label: '前端研发', value: 97, color: 'bg-gray-700' },
-              { label: '云原生架构', value: 93, color: 'bg-gray-600' },
-              { label: '重新定义AGI原型', value: 93, color: 'bg-gray-500' },
-              { label: '系统架构', value: 93, color: 'bg-gray-600' },
-              { label: 'DevOps', value: 93, color: 'bg-gray-500' },
-            ].map((skill, idx) => (
-              <div key={idx} className="bg-gray-50 p-2 rounded-sm border border-gray-200">
-                <div className="flex justify-between items-center mb-1">
-                  <span className="text-xs text-gray-800 font-medium">{skill.label}</span>
-                  <span className="text-xs text-gray-600">{skill.value}%</span>
-                </div>
-                <div className="h-1.5 bg-gray-200 rounded-full overflow-hidden border border-gray-300">
-                  <div className={`h-full ${skill.color} rounded-full print:border print:border-gray-400`} style={{ width: `${skill.value}%` }}></div>
-                </div>
-              </div>
+          <h3 className="text-sm font-semibold text-gray-700 mb-2.5 uppercase tracking-wide">专业特长</h3>
+
+          {/* 技术栈 */}
+          <div className="space-y-3">
+            {skillCategories.map(cat => (
+              <p key={cat.name} className="text-[11px] text-gray-600 leading-[1.7] text-justify">
+                <span className="text-gray-800">{cat.name}</span>
+                <span className="text-gray-300 mx-1.5">/</span>
+                {cat.skills.map(skill => skill.name).join(' · ')}
+              </p>
             ))}
           </div>
+
+          {/* 核心专长亮点 */}
+          {(() => {
+            const specs = [
+              ...(personalInfo.specialties || []),
+              ...(personalInfo.specialtiesDatabase || []),
+              ...(personalInfo.specialtiesArchitecture || []),
+            ];
+            if (!specs.length) return null;
+            return (
+              <div className="mt-4 pt-3 border-t border-gray-200">
+                <div className="flex w-full items-center text-[11px] text-gray-700 tracking-wide">
+                  {specs.map((spec, idx) => (
+                    <React.Fragment key={idx}>
+                      <span className="shrink-0 whitespace-nowrap">{spec}</span>
+                      {idx < specs.length - 1 && (
+                        <span className="flex-1 text-center text-gray-300 select-none" aria-hidden>
+                          ·
+                        </span>
+                      )}
+                    </React.Fragment>
+                  ))}
+                </div>
+              </div>
+            );
+          })()}
         </div>
 
         {/* 工作经历 */}
         <div className="flex-1">
-          <h3 className="text-sm font-medium text-gray-700 mb-3 uppercase tracking-wide">代表工作经历</h3>
-          <div className="space-y-4">
+          <h3 className="text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wide" >代表工作经历</h3>
+          <div className="space-y-5">
             {workExperience.map((work, idx) => (
               <div key={idx} className="relative pl-5 border-l border-gray-200">
                 <div className="absolute left-[-3px] top-0 w-1.5 h-1.5 rounded-full bg-gray-400"></div>
-                <div className="flex justify-between items-start mb-2">
-                <div>
-                  <p className="text-sm font-medium text-gray-800">{work.position}</p>
-                  <p className="text-xs text-gray-500">{work.company}</p>
+                <div className="flex justify-between items-start gap-3 mb-2">
+                  <div className="min-w-0">
+                    <p className="text-sm font-medium text-gray-800">{work.position}</p>
+                    <p className="text-xs text-gray-400 mt-0.5">
+                      {work.duration}
+                      {work.salary ? ` · 薪资：${work.salary}` : ''}
+                    </p>
+                  </div>
+                  <p className="text-xs text-gray-500 shrink-0 text-right">{work.company}</p>
                 </div>
-                <div className="text-right space-y-1">
-                  <span className="block text-xs text-gray-400">{work.duration}</span>
-                  {/* 新增：薪资 */}
-                  {work.salary && (
-                    <span className="block text-xs " style={{color: 'gray'}}>
-                      薪资：{work.salary}
-                    </span>
-                  )}
-                </div>
-              </div>
-                <p className="text-xs text-gray-600 leading-relaxed mb-2">{work.description}</p>
-                <div className="flex flex-wrap gap-1">
+                <p className="text-xs text-gray-600 leading-[1.7] mb-2.5">{work.description}</p>
+                <div className="flex flex-wrap gap-1.5">
                   {work.technologies.map(tech => (
                     <span key={tech} className="px-2 py-0.5 bg-gray-100 text-gray-500 text-[10px] rounded">
                       {tech}
